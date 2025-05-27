@@ -1,0 +1,8 @@
+this sample shows the history of model affects its next results. therefore, it is better to avoid saving history in classification with llms
+
+"Defense systems and political strategy have been affected by sports scientists"
+
+if you ask this question twice and change model's first prediction, it probably predicts the same at the second time.
+
+--------------
+

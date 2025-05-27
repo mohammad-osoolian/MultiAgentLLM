@@ -1,4 +1,6 @@
 import pandas as pd
+import numpy as np
+
 
 def accuracy(labels, predicts):
     cnt = 0
@@ -6,6 +8,22 @@ def accuracy(labels, predicts):
         if labels[i] == predicts[i]:
             cnt += 1
     return cnt / len(labels)
+
+def list2onehot(lst, n_labels):
+    # lst = list(map(int, lst.split(',')))
+    vector = np.zeros(shape=(n_labels,))
+    for l in lst:
+        vector[l - 1] = 1
+    return vector
+
+def multi_label_acc(labels, predictions, n_labels):
+    result = []
+    for label, prediction in zip(labels, predictions):
+        gt_onehot = list2onehot(list(map(int, label.split(','))), n_labels)
+        pred_onehot = list2onehot(prediction, n_labels)
+        dist = np.abs(gt_onehot - pred_onehot).sum()
+        result.append(1.0 - dist/n_labels)
+    return sum(result) / len(result)
 
 def common_results(p1, p2, p3):
     cnt = 0

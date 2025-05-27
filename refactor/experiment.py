@@ -55,7 +55,8 @@ class ZeroShotExperiment:
     def messure_metrics(self):
         predicts = self.results['predict'].tolist()
         labels = self.results['label'].tolist()
-        self.metrics['accuracy'] = metrics.accuracy(labels, predicts)
+        # self.metrics['accuracy'] = metrics.accuracy(labels, predicts)
+        self.metrics['ml_accuracy'] = metrics.multi_label_acc(labels, predicts, 28)
 
 class DebateExperimet:
     def __init__(self, data, agents, basepath):

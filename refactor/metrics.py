@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+from typing import List
 
 
 def accuracy(labels, predicts):
@@ -9,12 +10,6 @@ def accuracy(labels, predicts):
             cnt += 1
     return cnt / len(labels)
 
-def error_rate(errors):
-    return errors.count(1)
-
-from typing import List
-
-def common_results(predictions: List[List], labels: List = None) -> float:
 def list2onehot(lst, n_labels):
     # lst = list(map(int, lst.split(',')))
     vector = np.zeros(shape=(n_labels,))
@@ -31,7 +26,12 @@ def multi_label_acc(labels, predictions, n_labels):
         result.append(1.0 - dist/n_labels)
     return sum(result) / len(result)
 
-def common_results(p1, p2, p3):
+
+def error_rate(errors):
+    return errors.count(1)
+
+
+def common_results(predictions: List[List], labels: List = None) -> float:
     cnt = 0
     for i in range(len(predictions[0])):
         first = predictions[0][i]

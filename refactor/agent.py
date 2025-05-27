@@ -105,22 +105,27 @@ class DebateAgent(ZeroShotLlm):
     def argue(self, text):
         return super().predict(text, keep_history=True)
         
-    def update_answer(self, predicts, expls, errors):
-        update_answer_prompt = self.build_update_answer_prompt(predicts, expls, errors)
-        print(update_answer_prompt)
-        response = self.message(update_answer_prompt)
-        print(response)
-        (pclass, pexpl), err = self.convert_prediction(response)
-        return (pclass, pexpl), err
+    def update_answer(self, predicts, expls, errors, text, agent_index):
+        update_answer_prompt = self.build_update_answer_prompt(predicts, expls, errors, text, agent_index)
+        response = self.message(update_answer_prompt, response_format={'type': 'json_object'})
+        result, err = self.convert_prediction(response)
+        return result, err
 
-    def build_update_answer_prompt(self, predicts, expls, errors):
-        allanswers = []
+    def build_update_answer_prompt(self, predicts, expls, errors, text, agent_index):
+        your_answer = (
+            "Your Answer\n"
+            f"Predictoin: {predicts[agent_index]}\n"
+            f"Explanation: {expls[agent_index]}\n"
+            )
+        allanswers = ["Other Agent Answers"]
         for i in range(len(predicts)):
+            if i == agent_index:
+                continue
             answer = (
                 f"Agent {i+1}\n"
                 f"Predictoin: {predicts[i]}\n"
                 f"Explanation: {expls[i]}\n"
             )
             allanswers.append(answer)
-        prompt = utils.UPDATE_ANSWER_MESSAGE.replace('$ALLANSWERS', '\n'.join(allanswers))
+        prompt = text + '\n' + utils.UPDATE_ANSWER_MESSAGE + your_answer + '\n'.join(allanswers)
         return prompt

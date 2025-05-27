@@ -9,6 +9,12 @@ def accuracy(labels, predicts):
             cnt += 1
     return cnt / len(labels)
 
+def error_rate(errors):
+    return errors.count(1)
+
+from typing import List
+
+def common_results(predictions: List[List], labels: List = None) -> float:
 def list2onehot(lst, n_labels):
     # lst = list(map(int, lst.split(',')))
     vector = np.zeros(shape=(n_labels,))
@@ -27,38 +33,42 @@ def multi_label_acc(labels, predictions, n_labels):
 
 def common_results(p1, p2, p3):
     cnt = 0
-    for i in range(len(p1)):
-        if p1[i] == p2[i] and p2[i] == p3[i]:
+    for i in range(len(predictions[0])):
+        first = predictions[0][i]
+        if all(p[i] == first for p in predictions):
             cnt += 1
-    return cnt / len(p1)
+    return cnt / len(predictions[0])
 
-def common_mistakes(p1, p2, p3, labels):
+def common_mistakes(predictions: List[List], labels: List) -> float:
     cnt = 0
-    for i in range(len(p1)):
-        if p1[i] == p2[i] and p2[i] == p3[i] and p3[i] != labels[i]:
+    for i in range(len(labels)):
+        first = predictions[0][i]
+        if all(p[i] == first for p in predictions) and first != labels[i]:
             cnt += 1
-    return cnt / len(p1)
+    return cnt / len(labels)
 
-def at_least_one_correct(p1, p2, p3, labels):
+def at_least_one_correct(predictions: List[List], labels: List) -> float:
     cnt = 0
-    for i in range(len(p1)):
-        if (p1[i] == labels[i] or p2[i] == labels[i] or p3[i] == labels[i]):
+    for i in range(len(labels)):
+        if any(p[i] == labels[i] for p in predictions):
             cnt += 1
-    return cnt / len(p1)
+    return cnt / len(labels)
 
-def uncommon_with_at_least_one_correct(p1, p2, p3, labels):
+def uncommon_with_at_least_one_correct(predictions: List[List], labels: List) -> float:
     cnt = 0
-    for i in range(len(p1)):
-        if not(p1[i] == p2[i] and p2[i] == p3[i]) and (p1[i] == labels[i] or p2[i] == labels[i] or p3[i] == labels[i]):
+    for i in range(len(labels)):
+        first = predictions[0][i]
+        all_same = all(p[i] == first for p in predictions)
+        any_correct = any(p[i] == labels[i] for p in predictions)
+        if not all_same and any_correct:
             cnt += 1
-    return cnt / len(p1)
+    return cnt / len(labels)
 
-def analysis_debate_potential(p1, p2, p3, labels):
-    print('Agent1 Accuracy:', accuracy(p1, labels))
-    print('Agent2 Accuracy:', accuracy(p2, labels))
-    print('Agent3 Accuracy:', accuracy(p3, labels))
 
-    print('Common Answers:', common_results(p1, p2, p3))
-    print('Common Mistakes:', common_mistakes(p1, p2, p3, labels))
-    print('At Least One Correct:', at_least_one_correct(p1, p2, p3, labels))
-    print('Uncommon with at Least One Correct:', uncommon_with_at_least_one_correct(p1, p2, p3, labels))
+def analysis_debate_potential(predictions, labels):
+    analysis = {}
+    analysis['common_answers'] = common_results(predictions)
+    analysis['at_least_one_correct'] = at_least_one_correct(predictions, labels)
+    analysis['common_mistakes'] = common_mistakes(predictions, labels)
+    analysis['uncommon_with_at_least_one_correct'] = uncommon_with_at_least_one_correct(predictions, labels)
+    return analysis

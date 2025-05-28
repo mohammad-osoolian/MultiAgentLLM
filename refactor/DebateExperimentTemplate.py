@@ -8,15 +8,19 @@ from openai import OpenAI
 
 
 def validator(predict):
-    return 'next_number' in predict and 'explanation' in predict and predict['next_number'].isdigit()
+    for l in predict['label_ids'].split(','):
+        if not (0 < int(l) < 29):
+            return False
+    return 'label_ids' in predict and 'explanation' in predict
 
 def extractor(predict):
-    result = {'predict':None, 'explanation':None}
-    result['predict'] = predict['next_number']
+    result = {}
+    label_ids = sorted(list(map(int, predict['label_ids'].split(','))))
+    result['predict'] = label_ids
     result['explanation'] = predict['explanation']
-    return result
+    return result   
 
-data = DataHandler('../datasets/number_pattern.tsv')
+data = DataHandler(os.path.join('datasets', 'multi-label-emotion.tsv'))
 client = OpenAI(api_key=utils.API_KEY)
 config = DebateAgentConfig(utils.PERSONA, utils.INSTRUCTION, utils.DEBATE_OUTPUT_SCHEMA, validator, extractor)
 agent = DebateAgent('gpt-4o-mini', client, config)
@@ -25,7 +29,8 @@ agent = DebateAgent('gpt-4o-mini', client, config)
 config = DebateAgentConfig(utils.PERSONA, utils.INSTRUCTION, utils.DEBATE_OUTPUT_SCHEMA, validator, extractor)
 agent1 = DebateAgent('gpt-4o-mini', client, config, temperature=1)
 agent2 = DebateAgent('gpt-4o-mini', client, config, temperature=1)
-agent3 = DebateAgent('gpt-4o-mini', client, config, temperature=1)
+# agent3 = DebateAgent('gpt-4o-mini', client, config, temperature=1)
 
-debate = DebateExperiment(data, [agent1, agent2, agent3], '../experiments/debate/number_pattern/same-agents-4o-mini')
+# debate = DebateExperiment(data, [agent1, agent2], '../experiments/debate/number_pattern/same-agents-4o-mini')
+debate = DebateExperiment(data, [agent1, agent2], os.path.join('experiments', 'debate', 'multi-emotion', 'init-test-9'))
 debate.run()

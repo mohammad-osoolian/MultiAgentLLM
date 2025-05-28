@@ -1,0 +1,3 @@
+id	label	predict	explanation	err
+eeaf7fg	4,11	[3, 4]	The text expresses anger (id 3) toward the idea of crossing a moral boundary by suggesting strong displeasure regarding what the individual ([NAME]) would consider crossing the line. There is also a sense of annoyance (id 4) implied in the disapproval of actions associated with the 'Dark Side', which suggests irritation towards those who do not adhere to moral standards.	0
+ee3yyz3	2,19	[19, 2]	The text expresses love (id 19) towards someone's last name, indicating a positive feeling. Additionally, the use of 'Lol!' and 'XD' suggests amusement (id 2), as these expressions typically indicate laughter or finding something funny.	0

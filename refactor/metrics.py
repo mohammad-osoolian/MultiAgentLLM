@@ -27,6 +27,14 @@ def multi_label_acc(labels, predictions, n_labels):
     return sum(result) / len(result)
 
 
+def agreement_rate(predicts):
+    if type(predicts[0]) == list:
+        first = predicts[0]
+        return all(p == first for p in predicts)
+    else:
+        return len(set(predicts)) == 1
+
+
 def error_rate(errors):
     return errors.count(1)
 

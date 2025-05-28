@@ -7,6 +7,7 @@ from agent import *
 from logger import *
 from dataset import *
 import metrics
+import numpy as np
 
 class ZeroShotExperiment:
     def __init__(self, data:DataHandler, agent:ZeroShotLlm, basepath):
@@ -75,13 +76,35 @@ class DebateExperiment:
         self.metrics = {}
 
     def check_agreement(self, predicts):
-        return len(set(predicts)) == 1
+        # return len(set(predicts)) == 1
+        first = predicts[0]
+        return all(p == first for p in predicts)
+
+    def list2onehot(self, lst, n_labels):
+    # lst = list(map(int, lst.split(',')))
+        vector = np.zeros(shape=(n_labels,))
+        for l in lst:
+            vector[l - 1] = 1
+        return vector
+
+    def onehot2list(self, vector):
+        result = []
+        for i in range(len(vector)):
+            if vector[i]:
+                result.append(i+1)
+        return result
 
     def final_predict(self, predicts):
-        freq = {}
-        for p in predicts:
-            freq[p] = freq.get(p, 0) + 1
-        return max(freq, key=freq.get)
+        if type(predicts[0]) == list:
+            final_labels = np.ones(shape=(max(max(pr) for pr in predicts),))
+            for p in predicts:
+                final_labels *= self.list2onehot(p, max(max(pr) for pr in predicts))
+            return self.onehot2list(final_labels)
+        else:
+            freq = {}
+            for p in predicts:
+                freq[p] = freq.get(p, 0) + 1
+            return max(freq, key=freq.get)
     
     def run(self):
         self.single_agent()
@@ -158,6 +181,7 @@ class DebateExperiment:
         labels = self.data.results_template()['label'].tolist()
         errors = [d[1] for d in agent_result]
         agent_metrics['accuracy'] = metrics.accuracy(labels, predicts)
+        agent_metrics['ml_accuracy'] = metrics.multi_label_acc(labels, predicts, 28)
         agent_metrics['error_rate'] = metrics.error_rate(errors)
         return agent_metrics
 

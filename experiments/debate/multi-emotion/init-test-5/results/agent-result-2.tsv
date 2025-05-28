@@ -1,0 +1,3 @@
+id	label	predict	explanation	err
+eeaf7fg	4,11	[3, 4]	The sentiments expressed reflect a strong feeling of displeasure or antagonism (anger) towards the idea of crossing the line, as well as mild irritation (annoyance) regarding the situation.	0
+ee3yyz3	2,19	[19, 2]	The text expresses love (emotion id 19) for someone's last name, indicating a positive feeling towards it. Additionally, the use of 'Lol!' and 'XD' suggests amusement (emotion id 2), indicating that the speaker finds the situation funny or entertaining.	0

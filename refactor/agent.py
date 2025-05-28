@@ -102,8 +102,8 @@ class DebateAgent(ZeroShotLlm):
     def __init__(self, model, client, config, logger=NullLogger(), temperature=1):
         super().__init__(model, client, config, logger, temperature)
 
-    def argue(self, text):
-        return super().predict(text, keep_history=True)
+    def clean(self):
+        self.messages = [self.messages[0]]
         
     def update_answer(self, predicts, expls, errors, text, agent_index):
         update_answer_prompt = self.build_update_answer_prompt(predicts, expls, errors, text, agent_index)

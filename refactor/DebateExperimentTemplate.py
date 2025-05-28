@@ -23,11 +23,10 @@ def extractor(predict):
 data = DataHandler(os.path.join('datasets', 'multi-label-emotion.tsv'))
 client = OpenAI(api_key=utils.API_KEY)
 config = DebateAgentConfig(utils.PERSONA, utils.INSTRUCTION, utils.DEBATE_OUTPUT_SCHEMA, validator, extractor)
-agent = DebateAgent('gpt-4o-mini', client, config)
 # basepath = '../experiments/debate/number_pattern/test-1'
 
 config = DebateAgentConfig(utils.PERSONA, utils.INSTRUCTION, utils.DEBATE_OUTPUT_SCHEMA, validator, extractor)
-agent1 = DebateAgent('gpt-4o-mini', client, config, temperature=1)
+agent1 = DebateAgent('gpt-4o-mini', client, config, temperature=1.2)
 agent2 = DebateAgent('gpt-4o-mini', client, config, temperature=1)
 # agent3 = DebateAgent('gpt-4o-mini', client, config, temperature=1)
 

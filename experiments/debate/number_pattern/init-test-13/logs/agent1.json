@@ -1,0 +1,6 @@
+{"role": "user", "content": "1, 10, 19, 28"}
+{"role": "assistant", "content": "{\n   \"label_ids\": \"1,10,19,28\",\n   \"explanation\": \"The text expresses a mix of admiration for someone's qualities or actions, disappointment in an unmet expectation, love for someone or something, and surprise at an unexpected turn of events.\"\n}"}
+{"role": "user", "content": "5, 0, 5, 25, 130"}
+{"role": "assistant", "content": "{\n   \"label_ids\": \"5, 25\",\n   \"explanation\": \"The emotions identified in the text are 'approval' (id 5) because of a positive expression or favor towards something, and 'realization' (id 24) as it denotes becoming aware of something, which can correlate with a state of clarity or understanding.\"\n}"}
+{"role": "user", "content": "7, 8, 9, 10"}
+{"role": "assistant", "content": "{\n   \"label_ids\": \"7,8,9,10\",\n   \"explanation\": \"The text evokes confusion (7) by expressing lack of understanding, curiosity (8) as there is a strong desire to learn more, desire (9) indicates a strong feeling of wanting something, and disappointment (10) suggests sadness or displeasure due to unmet expectations.\"\n}"}

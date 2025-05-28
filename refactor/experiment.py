@@ -186,6 +186,7 @@ class DebateExperiment:
         all_predictions = [self.results[f'predict{i+1}'].tolist() for i in range(len(self.agents))]
         self.metrics['analysis'] = metrics.analysis_debate_potential(all_predictions, labels)
         self.metrics['accuracy'] = metrics.accuracy(labels, predicts)
+        self.metrics['ml_accuracy'] = metrics.multi_label_acc(labels, predicts, 28)
     
     def write_results(self):
         df = self.results[['id', 'label', 'debate_predict']]

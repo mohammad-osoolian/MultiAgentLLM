@@ -1,0 +1,4 @@
+id	label	predict2	explanation2	error2
+1	11	[7, 8, 9, 10]	The text presents confusion (7) due to a lack of understanding, curiosity (8) demonstrated by a desire to learn more, desire (9) shown through a strong feeling of wanting something, and disappointment (10) which indicates sadness or displeasure from unmet hopes.	0
+2	37	[1, 10, 19, 28]	The text expresses a sense of admiration (1) for someone or something impressive, alongside feelings of disappointment (10) due to unmet expectations. There is also an element of love (19) for a person or thing that evokes strong positive emotions. Lastly, the emotion of surprise (28) is present, indicating being astonished or startled by an unexpected event.	0
+28	675	[4, 5]	The emotions presented in the text include 'approval' (id 5) as it suggests a favorable opinion, and 'annoyance' (id 4) may be implied through the context of mild irritation or displeasure.	0

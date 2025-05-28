@@ -1,0 +1,6 @@
+{"role": "user", "content": "7, 8, 9, 10"}
+{"role": "assistant", "content": "{\n   \"label_ids\": \"7,8,9,10\",\n   \"explanation\": \"The text presents confusion (7) due to a lack of understanding, curiosity (8) demonstrated by a desire to learn more, desire (9) shown through a strong feeling of wanting something, and disappointment (10) which indicates sadness or displeasure from unmet hopes.\"\n}"}
+{"role": "user", "content": "1, 10, 19, 28"}
+{"role": "assistant", "content": "{\n   \"label_ids\": \"1,10,19,28\",\n   \"explanation\": \"The text expresses a sense of admiration (1) for someone or something impressive, alongside feelings of disappointment (10) due to unmet expectations. There is also an element of love (19) for a person or thing that evokes strong positive emotions. Lastly, the emotion of surprise (28) is present, indicating being astonished or startled by an unexpected event.\"\n}"}
+{"role": "user", "content": "5, 0, 5, 25, 130"}
+{"role": "assistant", "content": "{\n   \"label_ids\": \"5, 4\",\n   \"explanation\": \"The emotions presented in the text include 'approval' (id 5) as it suggests a favorable opinion, and 'annoyance' (id 4) may be implied through the context of mild irritation or displeasure.\"\n}"}

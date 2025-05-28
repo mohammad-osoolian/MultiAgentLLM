@@ -1,0 +1,20 @@
+{
+    "agent1": {
+        "accuracy": 0.0,
+        "error_rate": 3,
+        "ml_accuracy": 0.915451895043732
+    },
+    "agent2": {
+        "accuracy": 0.0,
+        "error_rate": 3,
+        "ml_accuracy": 0.9198250728862974
+    },
+    "analysis": {
+        "common_answers": 0.6884353741496598,
+        "at_least_one_correct": 0.0,
+        "common_mistakes": 0.608843537414966,
+        "uncommon_with_at_least_one_correct": 0.0
+    },
+    "accuracy": 0.0,
+    "ml_accuracy": 0.916909620991254
+}

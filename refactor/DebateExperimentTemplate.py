@@ -9,7 +9,7 @@ from openai import OpenAI
 
 def validator(predict):
     for l in predict['label_ids'].split(','):
-        if not (0 < int(l) < 29):
+        if (not l) or not (0 < int(l) < 29):
             return False
     return 'label_ids' in predict and 'explanation' in predict
 
@@ -31,5 +31,5 @@ agent2 = DebateAgent('gpt-4o-mini', client, config, temperature=1)
 # agent3 = DebateAgent('gpt-4o-mini', client, config, temperature=1)
 
 # debate = DebateExperiment(data, [agent1, agent2], '../experiments/debate/number_pattern/same-agents-4o-mini')
-debate = DebateExperiment(data, [agent1, agent2], os.path.join('experiments', 'debate', 'multi-emotion', 'init-test-9'))
+debate = DebateExperiment(data, [agent1, agent2], os.path.join('experiments', 'debate', 'multi-emotion', 'full-experiment3'))
 debate.run()

@@ -1,0 +1,4 @@
+id	label	predict1	explanation1	error1
+1	11	[7, 8, 9, 10]	The emotions present in the text suggest a lack of understanding or uncertainty (confusion), a strong desire to know or learn (curiosity), a strong feeling of wanting something or wishing for something to happen (desire), and sadness or displeasure due to the nonfulfillment of hopes or expectations (disappointment).	0
+2	37	[1, 10, 19, 28]	The text presents multiple emotions. 'Admiration' is demonstrated through respect for someone's qualities, 'disappointment' arises from hopes unmet, 'love' reflects caring feelings towards someone, and 'surprise' indicates astonishment due to unexpected events. These emotions manifest in a way that aligns with the descriptions of each emotion.	0
+28	675	[5]	The text mentions 'approval', which corresponds to the emotion ID 5, suggesting a favorable opinion.	0

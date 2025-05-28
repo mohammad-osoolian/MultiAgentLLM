@@ -39,21 +39,39 @@ def error_rate(errors):
     return errors.count(1)
 
 
+def get_intersection(agents_prediction):
+    first = agents_prediction[0]
+    intersect = set(first)
+    for p in agents_prediction:
+        intersect = intersect.intersection(set(p))
+    return intersect
+
+
 def common_results(predictions: List[List], labels: List = None) -> float:
     cnt = 0
+    if type(predictions[0][0]) != list:
+        predictions = np.array(predictions).reshape(len(predictions), len(predictions[0], 1))
     for i in range(len(predictions[0])):
-        first = predictions[0][i]
-        if all(p[i] == first for p in predictions):
-            cnt += 1
+        agents_prediction = [p[i] for p in predictions]
+        intersect = get_intersection(agents_prediction)
+        if sum([len(x) for x in agents_prediction]):
+            cnt += (len(intersect) * len(predictions)) / sum([len(x) for x in agents_prediction])
     return cnt / len(predictions[0])
+
 
 def common_mistakes(predictions: List[List], labels: List) -> float:
     cnt = 0
+    if type(predictions[0][0]) != list:
+        predictions = np.array(predictions).reshape(len(predictions), len(predictions[0], 1))
+    labels = [list(map(int, l.split(','))) for l in labels]
+    # labels = np.array(labels).reshape(len(labels), 1)
     for i in range(len(labels)):
-        first = predictions[0][i]
-        if all(p[i] == first for p in predictions) and first != labels[i]:
-            cnt += 1
+        agents_prediction = [p[i] for p in predictions]
+        intersect = get_intersection(agents_prediction)
+        correct_predictions = intersect.intersection(set(labels[i]))
+        cnt += (len(labels[i]) - len(correct_predictions)) / (len(labels[i]))
     return cnt / len(labels)
+
 
 def at_least_one_correct(predictions: List[List], labels: List) -> float:
     cnt = 0

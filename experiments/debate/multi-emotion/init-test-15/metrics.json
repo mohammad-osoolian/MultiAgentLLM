@@ -1,0 +1,17 @@
+{
+    "agent1": {
+        "accuracy": 0.0,
+        "error_rate": 0
+    },
+    "agent2": {
+        "accuracy": 0.0,
+        "error_rate": 0
+    },
+    "analysis": {
+        "common_answers": 0.5599999999999999,
+        "at_least_one_correct": 0.0,
+        "common_mistakes": 0.7,
+        "uncommon_with_at_least_one_correct": 0.0
+    },
+    "accuracy": 0.0
+}

@@ -65,13 +65,12 @@ class DebateExperiment:
     def __init__(self, data:DataHandler, agents: list[DebateAgent], basepath):
         self.data = data
         self.agents = agents
-        self.predictions = []
-        self.final_predictions = []
         self.basepath = basepath
         self.make_directories()
         for i in range(len(self.agents)):
             self.agents[i].logger = AgentLogger(f'{self.basepath}/logs/agent{i+1}.json')
         self.metrics = {}
+        self.results = self.data.results_template()
 
     def check_agreement(self, predicts):
         return len(set(predicts)) == 1
@@ -84,53 +83,47 @@ class DebateExperiment:
     
     def run(self):
         self.single_agent()
+        self.write_single_agent_results()
+        self.messure_agent_metrics()
         self.debate()
         self.messure_metrics()
         self.write_results()
 
-    def reformat(self, agent_results):
-        predictions = []
-        for i in range(len(self.data.texts)):
-            sample = {'predicts':[], 'explanations':[], 'errors':[]}
-            for j in range(len(self.agents)):
-                result, err = agent_results[j][i]
-                pred, expl = (result['predict'], result['explanation'])
-                sample['errors'].append(err)
-                sample['predicts'].append(pred)
-                sample['explanations'].append(expl)
-            predictions.append(sample)
-        return predictions
 
     def single_agent(self):
-        single_agent_results = []
-        for agent in self.agents:
+        for index, agent in enumerate(self.agents):
             agent_results = agent.batch_predict(self.data.texts)
             for i in range(len(agent_results)):
                 if agent_results[i][1]:
                     agent_results[i] = ({'predict': '', 'explanation': ''}, 1)
-            single_agent_results.append(agent_results)
-        for i in range(len(self.agents)):
-            self.write_single_agent_results(single_agent_results[i], f'{self.basepath}/results/agent-result-{i+1}.tsv')
-            self.metrics[f'agent{i+1}'] = self.messure_agent_metrics(single_agent_results[i])
+            rows = [{f'predict{index}': d[0]['predict'], f'explanation{index}': d[0]['explanation'], f'error{index}': d[1]} for d in agent_results]
+            self.results.assign(**pd.DataFrame(rows))
 
-        self.predictions = self.reformat(single_agent_results)
     
-    def write_single_agent_results(self, agent_result, path):
-        rows = [{'predict': d[0]['predict'], 'explanation': d[0]['explanation'], 'err': d[1]} for d in agent_result]
-        df = self.data.results_template().assign(**pd.DataFrame(rows))
-        df.to_csv(path, sep='\t', index=False)      
+    def write_single_agent_results(self):
+        for i in range(len(self.agents)):
+            df = self.results[['id', 'label', f'predict{i}', f'explanation{i}', f'error{i}']]
+            df.to_csv(f'{self.basepath}/results/agent-result-{i+1}.tsv', sep='\t', index=False)      
 
     def debate(self):
-        for i, sample in enumerate(self.predictions):
-            print(self.data.texts[i])
-            predicts, expls, errors = sample['predicts'], sample['explanations'], sample['errors']
+        debate_predicts = []
+        for i, row in self.results.iterrows():
+            for agent in self.agents:
+                agent.clean()
+
+            predicts = [row[f'predict{i}'] for i in range(len(self.agents))]
+            expls = [row[f'explanation{i}'] for i in range(len(self.agents))]
+            errors = [row[f'error{i}'] for i in range(len(self.agents))]
+
             for round in range(3):
                 if self.check_agreement(predicts):
                     break
                 print("DEBATE")
                 predicts, expls, errors = self.debate_round(predicts, expls, errors, self.data.texts[i])
                 print(predicts)
-            self.final_predictions.append(self.final_predict(predicts))
+            debate_predicts.append(self.final_predict(predicts))
+        self.results['debate_predicts'] = debate_predicts
+
     
     def debate_round(self, predicts, expls, errors, text):
         new_predicts = [] 
@@ -152,13 +145,14 @@ class DebateExperiment:
         os.mkdir(f'{self.basepath}/results/')
     
     def messure_agent_metrics(self, agent_result):
-        agent_metrics = {}
-        predicts = [d[0]['predict'] for d in agent_result]
-        labels = self.data.results_template()['label'].tolist()
-        errors = [d[1] for d in agent_result]
-        agent_metrics['accuracy'] = metrics.accuracy(labels, predicts)
-        agent_metrics['error_rate'] = metrics.error_rate(errors)
-        return agent_metrics
+        labels = self.results['label'].tolist()
+        for i in range(len(self.agents)):
+            agent_metrics = {}
+            predicts = self.results[f'predict{i}'].tolist()
+            errors = self.results[f'error{i}'].tolist()
+            agent_metrics['accuracy'] = metrics.accuracy(labels, predicts)
+            agent_metrics['error_rate'] = metrics.error_rate(errors)
+            self.metrics[f'agent{i}'] = agent_metrics
 
 
     def messure_metrics(self):

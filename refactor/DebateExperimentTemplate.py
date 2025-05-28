@@ -16,7 +16,7 @@ def extractor(predict):
     result['explanation'] = predict['explanation']
     return result
 
-data = DataHandler('../datasets/number_pattern.tsv')
+data = DataHandler('../datasets/number_pattern copy.tsv')
 client = OpenAI(api_key=utils.API_KEY)
 config = DebateAgentConfig(utils.PERSONA, utils.INSTRUCTION, utils.DEBATE_OUTPUT_SCHEMA, validator, extractor)
 # basepath = '../experiments/debate/number_pattern/test-1'
@@ -26,5 +26,5 @@ agent1 = DebateAgent('gpt-4o-mini', client, config, temperature=1.2)
 agent2 = DebateAgent('gpt-4o-mini', client, config, temperature=1)
 agent3 = DebateAgent('gpt-4o-mini', client, config, temperature=0.8)
 
-debate = DebateExperiment(data, [agent1, agent2, agent3], '../experiments/debate/number_pattern/temper-12-1-08')
+debate = DebateExperiment(data, [agent1, agent2, agent3], '../experiments/debate/number_pattern/test-8')
 debate.run()

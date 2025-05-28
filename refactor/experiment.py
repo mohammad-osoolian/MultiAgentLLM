@@ -96,13 +96,13 @@ class DebateExperiment:
             for i in range(len(agent_results)):
                 if agent_results[i][1]:
                     agent_results[i] = ({'predict': '', 'explanation': ''}, 1)
-            rows = [{f'predict{index}': d[0]['predict'], f'explanation{index}': d[0]['explanation'], f'error{index}': d[1]} for d in agent_results]
-            self.results.assign(**pd.DataFrame(rows))
+            rows = [{f'predict{index+1}': d[0]['predict'], f'explanation{index+1}': d[0]['explanation'], f'error{index+1}': d[1]} for d in agent_results]
+            self.results = self.results.assign(**pd.DataFrame(rows))
 
     
     def write_single_agent_results(self):
         for i in range(len(self.agents)):
-            df = self.results[['id', 'label', f'predict{i}', f'explanation{i}', f'error{i}']]
+            df = self.results[['id', 'label', f'predict{i+1}', f'explanation{i+1}', f'error{i+1}']]
             df.to_csv(f'{self.basepath}/results/agent-result-{i+1}.tsv', sep='\t', index=False)      
 
     def debate(self):
@@ -111,9 +111,9 @@ class DebateExperiment:
             for agent in self.agents:
                 agent.clean()
 
-            predicts = [row[f'predict{i}'] for i in range(len(self.agents))]
-            expls = [row[f'explanation{i}'] for i in range(len(self.agents))]
-            errors = [row[f'error{i}'] for i in range(len(self.agents))]
+            predicts = [row[f'predict{i+1}'] for i in range(len(self.agents))]
+            expls = [row[f'explanation{i+1}'] for i in range(len(self.agents))]
+            errors = [row[f'error{i+1}'] for i in range(len(self.agents))]
 
             for round in range(3):
                 if self.check_agreement(predicts):
@@ -122,7 +122,7 @@ class DebateExperiment:
                 predicts, expls, errors = self.debate_round(predicts, expls, errors, self.data.texts[i])
                 print(predicts)
             debate_predicts.append(self.final_predict(predicts))
-        self.results['debate_predicts'] = debate_predicts
+        self.results['debate_predict'] = debate_predicts
 
     
     def debate_round(self, predicts, expls, errors, text):
@@ -144,26 +144,26 @@ class DebateExperiment:
         os.mkdir(f'{self.basepath}/logs/')
         os.mkdir(f'{self.basepath}/results/')
     
-    def messure_agent_metrics(self, agent_result):
+    def messure_agent_metrics(self):
         labels = self.results['label'].tolist()
         for i in range(len(self.agents)):
             agent_metrics = {}
-            predicts = self.results[f'predict{i}'].tolist()
-            errors = self.results[f'error{i}'].tolist()
+            predicts = self.results[f'predict{i+1}'].tolist()
+            errors = self.results[f'error{i+1}'].tolist()
             agent_metrics['accuracy'] = metrics.accuracy(labels, predicts)
             agent_metrics['error_rate'] = metrics.error_rate(errors)
-            self.metrics[f'agent{i}'] = agent_metrics
+            self.metrics[f'agent{i+1}'] = agent_metrics
 
 
     def messure_metrics(self):
-        predicts = self.final_predictions
-        labels = self.data.results_template()['label'].tolist()
-        all_predictions = list(zip(*[d['predicts'] for d in self.predictions]))
+        predicts = self.results['debate_predict'].tolist()
+        labels = self.results['label'].tolist()
+        all_predictions = [self.results[f'predict{i+1}'].tolist() for i in range(len(self.agents))]
         self.metrics['analysis'] = metrics.analysis_debate_potential(all_predictions, labels)
         self.metrics['accuracy'] = metrics.accuracy(labels, predicts)
     
     def write_results(self):
-        df = self.data.results_template().assign(predict=self.final_predictions)
+        df = self.results[['id', 'label', 'debate_predict']]
         df.to_csv(f'{self.basepath}/results/debate-result.tsv', sep='\t', index=False)
         with open(f'{self.basepath}/metrics.json', 'w') as f:
             f.write(json.dumps(self.metrics))

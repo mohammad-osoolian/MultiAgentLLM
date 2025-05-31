@@ -1,0 +1,127 @@
+id	label	predict_0	predict_1	predict_2	predict_3
+2	neutral	sadness	sadness	disapproval	anger
+4	fear	fear	anger	anger	fear
+6	surprise	anger	anger	anger	disapproval
+7	gratitude	excitement	excitement		nervousness
+8	admiration	anger	anger	annoyance	anger
+9	neutral	curiosity	curiosity	confusion	curiosity
+10	confusion	curiosity	confusion	confusion	confusion
+11	neutral	neutral	neutral	caring	neutral
+13	annoyance	annoyance	anger	anger	annoyance
+16	neutral	disgust	anger	disapproval	disapproval
+19	neutral	neutral	neutral	confusion	neutral
+20	neutral	neutral	neutral	confusion	neutral
+22	neutral	amusement	amusement	joy	amusement
+24	neutral	fear	disappointment	sadness	disappointment
+28	confusion	curiosity	confusion	confusion	confusion
+29	joy	gratitude	gratitude	caring	joy
+30	neutral	disappointment	disappointment	disapproval	disapproval
+31	admiration	neutral	neutral	admiration	admiration
+32	sadness	curiosity	curiosity	curiosity	fear
+34	neutral				
+35	disapproval	disapproval	amusement	amusement	amusement
+39	neutral	curiosity	curiosity	confusion	confusion
+40	neutral	amusement	amusement	surprise	surprise
+42	approval	neutral	confusion	curiosity	neutral
+43	neutral	amusement	joy	amusement	joy
+45	neutral	anger	anger	disapproval	disapproval
+46	neutral	anger		anger	anger
+48	gratitude	approval	curiosity	curiosity	curiosity
+51	excitement	surprise	admiration	surprise	surprise
+52	neutral	admiration	curiosity	curiosity	curiosity
+57	neutral	neutral	neutral	curiosity	neutral
+62	admiration	admiration	admiration	joy	joy
+63	neutral	curiosity	confusion	confusion	confusion
+66	approval	neutral	confusion	confusion	amusement
+67	sadness	caring	caring	caring	love
+69	neutral	confusion	confusion	curiosity	confusion
+70	sadness			confusion	confusion
+75	remorse	disappointment	disappointment	disappointment	disapproval
+80	neutral	amusement		amusement	amusement
+81	curiosity		disgust	fear	fear
+85	disapproval	anger	anger	disapproval	disapproval
+87	neutral	neutral	neutral	disapproval	disapproval
+88	caring	disapproval	disapproval		disapproval
+90	neutral	admiration	admiration	joy	joy
+94	realization	realization	realization	relief	relief
+95	neutral	amusement	disapproval	confusion	annoyance
+96	joy	annoyance	annoyance	disapproval	annoyance
+100	neutral	confusion	curiosity	confusion	curiosity
+101	neutral	disapproval	disappointment	disappointment	disapproval
+103	annoyance	annoyance	annoyance	annoyance	anger
+113	disappointment	disappointment	disappointment		disappointment
+119	neutral	neutral	confusion	neutral	neutral
+127	admiration	gratitude	admiration	gratitude	gratitude
+128	fear	disapproval	disapproval	anger	disapproval
+129	love	love	joy	joy	love
+131	neutral	disappointment	annoyance	disappointment	disappointment
+132	annoyance	disapproval		disapproval	disapproval
+133	neutral	neutral	neutral	neutral	curiosity
+141	optimism	caring	caring	approval	caring
+146	admiration	admiration	admiration	approval	admiration
+147	joy	joy	joy	gratitude	approval
+151	gratitude	optimism	optimism	gratitude	optimism
+152	admiration	admiration	approval	optimism	approval
+155	joy	excitement	joy	joy	excitement
+157	curiosity	neutral	curiosity	curiosity	curiosity
+158	approval				
+160	annoyance	disapproval	anger	anger	disapproval
+161	approval	anger	disapproval	anger	disapproval
+166	love	neutral	disappointment	curiosity	confusion
+169	curiosity	curiosity	curiosity	confusion	confusion
+170	joy	joy	admiration	admiration	admiration
+172	gratitude	curiosity	gratitude	gratitude	curiosity
+174	neutral	annoyance	disappointment	disapproval	annoyance
+175	approval	approval	approval	neutral	approval
+178	confusion	confusion	curiosity	confusion	curiosity
+179	neutral	disapproval	neutral	neutral	neutral
+184	admiration	admiration	admiration	admiration	approval
+185	sadness	sadness	sadness	sadness	disappointment
+186	admiration	surprise	confusion	surprise	
+191	neutral	confusion	confusion		confusion
+195	neutral	disgust	disgust	sadness	disgust
+196	approval	neutral	optimism		neutral
+197	neutral	disgust	disgust	disappointment	disgust
+198	confusion	disapproval	disapproval	disapproval	confusion
+199	disapproval	disgust	disgust	disgust	disapproval
+201	curiosity	curiosity	confusion	curiosity	confusion
+202	neutral	disapproval	disgust	disapproval	disapproval
+203	neutral	anger	anger	disgust	anger
+205	approval	curiosity	curiosity	confusion	curiosity
+210	sadness	sadness	disappointment	sadness	sadness
+214	curiosity	neutral	confusion	confusion	neutral
+216	annoyance	disapproval	anger	anger	anger
+217	sadness	sadness	sadness	sadness	disappointment
+219	neutral	disappointment	disappointment	disappointment	surprise
+221	neutral	disapproval	disappointment	disappointment	disapproval
+222	disappointment	annoyance	disapproval	disapproval	disapproval
+224	love	admiration	joy	approval	joy
+228	gratitude	disgust	disgust	disgust	anger
+229	neutral	neutral	confusion	neutral	neutral
+230	annoyance	disapproval	disapproval	annoyance	disapproval
+235	disappointment	disappointment	sadness	sadness	disappointment
+241	approval	joy	joy	excitement	joy
+242	neutral	love	pride	love	love
+244	confusion	amusement	amusement	amusement	curiosity
+245	approval	optimism	excitement	excitement	optimism
+249	neutral	joy	disapproval	amusement	caring
+250	disapproval	disapproval	disapproval		disapproval
+257	admiration	admiration	admiration	joy	joy
+260	disapproval	annoyance	annoyance	annoyance	
+262	neutral	disapproval	anger	anger	anger
+267	optimism	amusement	amusement	amusement	anger
+268	amusement	amusement	amusement	disappointment	amusement
+270	neutral	disapproval	disappointment	disapproval	disappointment
+273	neutral		disapproval		disappointment
+274	surprise	surprise	surprise	surprise	joy
+275	annoyance	surprise	curiosity	curiosity	surprise
+279	disapproval	confusion	neutral	confusion	curiosity
+281	amusement	joy	joy	amusement	joy
+286	neutral	curiosity	neutral	curiosity	neutral
+287	neutral	disappointment	neutral	neutral	disappointment
+289	neutral	fear	disappointment	disappointment	disgust
+291	admiration	amusement	amusement	amusement	excitement
+294	curiosity	neutral	curiosity	curiosity	curiosity
+296	optimism	nervousness	nervousness	nervousness	
+297	disgust	embarrassment	embarrassment		embarrassment
+299	surprise	annoyance	annoyance	disapproval	amusement

@@ -6,30 +6,55 @@ from debate import Debate
 import utils
 from openai import OpenAI
 
+classes = [
+'admiration', 'amusement', 'anger', 'annoyance', 'approval', 'caring', 'confusion', 'curiosity', 
+'desire', 'disappointment', 'disapproval', 'disgust', 'embarrassment', 'excitement', 'fear', 
+'gratitude', 'grief', 'joy', 'love', 'nervousness', 'optimism', 'pride', 'realization', 'relief', 
+'remorse', 'sadness', 'surprise', 'neutral',
+]
 
 def validator(predict):
-    for l in predict['label_ids'].split(','):
-        if (not l) or not (0 < int(l) < 29):
-            return False
-    return 'label_ids' in predict and 'explanation' in predict
+    return 'category' in predict and 'explanation' in predict and predict['category'] in classes
 
 def extractor(predict):
-    result = {}
-    label_ids = sorted(list(map(int, predict['label_ids'].split(','))))
-    result['predict'] = label_ids
-    result['explanation'] = predict['explanation']
-    return result   
+    result = {'predict': '', 'explanation': ''}
+    if predict is not None: 
+        result['predict'] = predict['category']
+        result['explanation'] = predict['explanation']
+    return result 
 
-data = DataHandler(os.path.join('datasets', 'multi-label-emotion.tsv'))
+persona = (
+    "You are an expert in emotional analysis and language understanding. You deeply understand nuances in language and context, and you consider tone, implication, and word choice to identify the most appropriate emotional label"
+)
+
+instruction = (
+    "Your task is to classify the emotional content of a sentence into one of 28 emotion categories and explain why. here are the list of categories: "
+    "admiration, amusement, anger, annoyance, approval, caring, confusion, curiosity, desire, disappointment, disapproval, disgust, embarrassment, excitement, fear, gratitude, grief, joy, love, nervousness, optimism, pride, realization, relief, remorse, sadness, surprise, neutral\n"
+    "return your response as a JSON object with the following format:"
+)
+output_schema1 = (
+    "{\n"
+    '   "category": "<predicted category>",\n'
+    '   "explanation": "<your explanation in about 50 words>"\n'
+    "}"
+)
+
+output_schema2 = (
+    "{\n"
+    '   "category": "<predicted category>",\n'
+    '   "explanation": "<your explanation in about 100 words>"\n'
+    "}"
+)
+
+data = DataHandler(os.path.join('../datasets', 'debate_goemotions_single_labeled.tsv'))
 client = OpenAI(api_key=utils.API_KEY)
-config = DebateAgentConfig(utils.PERSONA, utils.INSTRUCTION, utils.DEBATE_OUTPUT_SCHEMA, validator, extractor)
-# basepath = '../experiments/debate/number_pattern/test-1'
+config1 = DebateAgentConfig(persona, instruction, output_schema1, validator, extractor)
+config2 = DebateAgentConfig(persona, instruction, output_schema2, validator, extractor)
 
-config = DebateAgentConfig(utils.PERSONA, utils.INSTRUCTION, utils.DEBATE_OUTPUT_SCHEMA, validator, extractor)
-agent1 = DebateAgent('gpt-4o-mini', client, config, temperature=1.2)
-agent2 = DebateAgent('gpt-4o-mini', client, config, temperature=1)
+agent1 = DebateAgent('gpt-4o-mini', client, config1, temperature=1)
+agent2 = DebateAgent('gpt-4o-mini', client, config2, temperature=1)
 # agent3 = DebateAgent('gpt-4o-mini', client, config, temperature=1)
 
 # debate = DebateExperiment(data, [agent1, agent2], '../experiments/debate/number_pattern/same-agents-4o-mini')
-debate = DebateExperiment(data, [agent1, agent2], os.path.join('experiments', 'debate', 'multi-emotion', 'full-experiment3'))
+debate = DebateExperiment(data, [agent1, agent2], os.path.join('../experiments', 'debate', 'goemotions', 'short-explanation-long-explanation'))
 debate.run()

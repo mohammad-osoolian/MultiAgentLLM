@@ -1,0 +1,104 @@
+{"role": "user", "content": "7, 12, 17, 22"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"27\"\n}"}
+{"role": "user", "content": "6, 18, 54, 162"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"486\"\n}"}
+{"role": "user", "content": "1, 2, 6, 42"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"1806\"\n}"}
+{"role": "user", "content": "7, 8, 9, 10"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"11\"\n}"}
+{"role": "user", "content": "0, 6, 48, 342"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"2046\"\n}"}
+{"role": "user", "content": "2, 4, 16, 256"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"65536\"\n}"}
+{"role": "user", "content": "7, 9, 11, 13"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"15\"\n}"}
+{"role": "user", "content": "4, 4, 4, 4"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"4\"\n}"}
+{"role": "user", "content": "5, 36, 253, 1772"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"12373\"\n}"}
+{"role": "user", "content": "1, 10, 19, 28"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"37\"\n}"}
+{"role": "user", "content": "7, 10, 13, 16"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"19\"\n}"}
+{"role": "user", "content": "1, 6, 26, 106"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"426\"\n}"}
+{"role": "user", "content": "1, 6, 56, 3306"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"10890306\"\n}"}
+{"role": "user", "content": "7, 2, 9, 11, 20"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"31\"\n}"}
+{"role": "user", "content": "2, 7, 57, 3307"}
+{"role": "assistant", "content": "{\"next_number\": \"109968377\"}"}
+{"role": "user", "content": "3, 4, 7, 11, 18"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"29\"\n}"}
+{"role": "user", "content": "4, 8, 16, 28, 48"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"76\"\n}"}
+{"role": "user", "content": "3, 4, 9, 15, 26"}
+{"role": "assistant", "content": "{\"next_number\": 42}"}
+{"role": "user", "content": "0, 9, 12, 24, 39"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"57\"\n}"}
+{"role": "user", "content": "5, 5, 10, 15, 25"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"40\"\n}"}
+{"role": "user", "content": "0, 4, 4, 8, 12"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"16\"\n}"}
+{"role": "user", "content": "2, 6, 8, 14, 22"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"34\"\n}"}
+{"role": "user", "content": "3, 8, 12, 21, 34"}
+{"role": "assistant", "content": "{\"next_number\": \"55\"}"}
+{"role": "user", "content": "1, 0, 9, 17, 34"}
+{"role": "assistant", "content": "\n{\n   \"next_number\": \"68\"\n}"}
+{"role": "user", "content": "1, 1, 12, 67, 364"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"1855\"\n}"}
+{"role": "user", "content": "8, 6, 40, 102, 328"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"1240\"\n}"}
+{"role": "user", "content": "91261, 19, 10"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"8\"\n}"}
+{"role": "user", "content": "4, 5, 23, 62, 194"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"582\"\n}"}
+{"role": "user", "content": "5, 0, 5, 25, 130"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"650\"\n}"}
+{"role": "user", "content": "17, 19, 23, 29"}
+{"role": "assistant", "content": "{\n   \"next_number\": 31\n}"}
+{"role": "user", "content": "5, 7, 11, 13"}
+{"role": "assistant", "content": "{\"next_number\": \"17\"}"}
+{"role": "user", "content": "70966, 28, 10"}
+{"role": "assistant", "content": "{\"next_number\": \"4\"}"}
+{"role": "user", "content": "43, 47, 53, 59"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"61\"\n}"}
+{"role": "user", "content": "61023, 12, 3"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"1\"\n}"}
+{"role": "user", "content": "19, 23, 29, 31"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"37\"\n}"}
+{"role": "user", "content": "29, 31, 37, 41"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"43\"\n}"}
+{"role": "user", "content": "5, 12, 25, 54"}
+{"role": "assistant", "content": "{\"next_number\": 109}"}
+{"role": "user", "content": "6, 13, 30, 61"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"124\"\n}"}
+{"role": "user", "content": "36513, 18, 9"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"4\"\n}"}
+{"role": "user", "content": "9, 20, 43, 90"}
+{"role": "assistant", "content": "{\"next_number\": 183}"}
+{"role": "user", "content": "6, 13, 30, 61"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"126\"\n}"}
+{"role": "user", "content": "1, 22, 333"}
+{"role": "assistant", "content": "{\"next_number\": \"4444\"}"}
+{"role": "user", "content": "2, 6, 14, 26"}
+{"role": "assistant", "content": "{\"next_number\": 42}"}
+{"role": "user", "content": "3, 8, 19, 42"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"85\"\n}"}
+{"role": "user", "content": "2, 7, 17, 32"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"52\"\n}"}
+{"role": "user", "content": "3, 3, 6, 18"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"108\"\n}"}
+{"role": "user", "content": "2, 4, 8, 14"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"22\"\n}"}
+{"role": "user", "content": "8, 9, 11, 14"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"18\"\n}"}
+{"role": "user", "content": "4, 7, 13, 22"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"34\"\n}"}
+{"role": "user", "content": "2, 2, 4, 12"}
+{"role": "assistant", "content": "{\"next_number\": \"48\"}"}
+{"role": "user", "content": "0, 1, 1, 0, 1, 0, 1, 0, 0, 0"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"0\"\n}"}
+{"role": "user", "content": "8, 8, 16, 48"}
+{"role": "assistant", "content": "{\n   \"next_number\": \"192\"\n}"}

@@ -94,7 +94,7 @@ class ZeroShotLlm(LlmAgent):
     def convert_prediction(self, json_predict):
         dict_predict, err = parse_json_or_none(json_predict)
         if err or (not self.validate_prediction(dict_predict)): 
-            return None, 1
+            return self.extract_prediction(None), 1
         return self.extract_prediction(dict_predict), 0
 
     
@@ -104,10 +104,13 @@ class DebateAgent(ZeroShotLlm):
 
     def clean(self):
         self.messages = [self.messages[0]]
+    
+    def argue(self, text):
+        return self.predict(text, keep_history=False)
         
     def update_answer(self, predicts, expls, errors, text, agent_index):
         update_answer_prompt = self.build_update_answer_prompt(predicts, expls, errors, text, agent_index)
-        response = self.message(update_answer_prompt, response_format={'type': 'json_object'})
+        response = self.message(update_answer_prompt, response_format={'type': 'json_object'}, keep_history=False)
         result, err = self.convert_prediction(response)
         return result, err
 
@@ -127,5 +130,5 @@ class DebateAgent(ZeroShotLlm):
                 f"Explanation: {expls[i]}\n"
             )
             allanswers.append(answer)
-        prompt = text + '\n' + utils.UPDATE_ANSWER_MESSAGE + your_answer + '\n'.join(allanswers)
+        prompt = text + '\n' + utils.UPDATE_ANSWER_MESSAGE + '\n' + your_answer + '\n'.join(allanswers)
         return prompt

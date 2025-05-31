@@ -47,7 +47,7 @@ class ZeroShotExperiment:
         self.write_results()
     
     def write_results(self):
-        self.results.to_csv(f'{self.basepath}/result/classification-result.tsv', sep='\t', index=False)
+        self.results.to_csv(f'{self.basepath}/results/zeroshot-result.tsv', sep='\t', index=False)
         with open(f'{self.basepath}/metrics.json', 'w') as f:
             f.write(json.dumps(self.metrics))
 
@@ -59,8 +59,9 @@ class ZeroShotExperiment:
     def messure_metrics(self):
         predicts = self.results['predict'].tolist()
         labels = self.results['label'].tolist()
-        # self.metrics['accuracy'] = metrics.accuracy(labels, predicts)
-        self.metrics['ml_accuracy'] = metrics.multi_label_acc(labels, predicts, 28)
+        self.metrics['accuracy'] = metrics.accuracy(labels, predicts)
+        self.metrics['error_rate'] = metrics.error_rate(predicts)
+        # self.metrics['ml_accuracy'] = metrics.multi_label_acc(labels, predicts, 28)
 
 
 class DebateExperiment:

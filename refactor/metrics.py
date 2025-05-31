@@ -36,7 +36,7 @@ def agreement_rate(predicts):
 
 
 def error_rate(errors):
-    return errors.count(1)
+    return errors.count(1)/len(errors)
 
 
 def get_intersection(agents_prediction):

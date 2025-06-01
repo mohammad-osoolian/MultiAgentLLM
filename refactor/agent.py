@@ -113,7 +113,7 @@ class DebateAgent(ZeroShotLlm):
 
     def build_update_answer_prompt(self, predicts, expls, errors, text, agent_index):
         your_answer = (
-            "Your Answer\n"
+            "Your Previous Answer\n"
             f"Predictoin: {predicts[agent_index]}\n"
             f"Explanation: {expls[agent_index]}\n"
             )

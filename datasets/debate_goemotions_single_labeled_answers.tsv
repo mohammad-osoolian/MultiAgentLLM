@@ -1,52 +1,41 @@
 id	label	predict_0	predict_1	predict_2	predict_3
-2	neutral	sadness	sadness	disapproval	anger
-4	fear	fear	anger	anger	fear
-6	surprise	anger	anger	anger	disapproval
-7	gratitude	excitement	excitement		nervousness
-8	admiration	anger	anger	annoyance	anger
+5	annoyance	disgust	disgust	anger	disgust
+6	surprise	disapproval	disapproval	annoyance	disapproval
+7	gratitude	excitement	nervousness	nervousness	excitement
+8	admiration	disapproval	disapproval	disapproval	anger
 9	neutral	curiosity	curiosity	confusion	curiosity
-10	confusion	curiosity	confusion	confusion	confusion
-11	neutral	neutral	neutral	caring	neutral
+10	confusion	disapproval	disapproval	curiosity	curiosity
 13	annoyance	annoyance	anger	anger	annoyance
-16	neutral	disgust	anger	disapproval	disapproval
-19	neutral	neutral	neutral	confusion	neutral
-20	neutral	neutral	neutral	confusion	neutral
-22	neutral	amusement	amusement	joy	amusement
-24	neutral	fear	disappointment	sadness	disappointment
-28	confusion	curiosity	confusion	confusion	confusion
-29	joy	gratitude	gratitude	caring	joy
-30	neutral	disappointment	disappointment	disapproval	disapproval
-31	admiration	neutral	neutral	admiration	admiration
-32	sadness	curiosity	curiosity	curiosity	fear
-34	neutral				
-35	disapproval	disapproval	amusement	amusement	amusement
-39	neutral	curiosity	curiosity	confusion	confusion
-40	neutral	amusement	amusement	surprise	surprise
-42	approval	neutral	confusion	curiosity	neutral
-43	neutral	amusement	joy	amusement	joy
-45	neutral	anger	anger	disapproval	disapproval
-46	neutral	anger		anger	anger
-48	gratitude	approval	curiosity	curiosity	curiosity
-51	excitement	surprise	admiration	surprise	surprise
-52	neutral	admiration	curiosity	curiosity	curiosity
-57	neutral	neutral	neutral	curiosity	neutral
-62	admiration	admiration	admiration	joy	joy
-63	neutral	curiosity	confusion	confusion	confusion
-66	approval	neutral	confusion	confusion	amusement
-67	sadness	caring	caring	caring	love
-69	neutral	confusion	confusion	curiosity	confusion
-70	sadness			confusion	confusion
-75	remorse	disappointment	disappointment	disappointment	disapproval
-80	neutral	amusement		amusement	amusement
-81	curiosity		disgust	fear	fear
-85	disapproval	anger	anger	disapproval	disapproval
-87	neutral	neutral	neutral	disapproval	disapproval
-88	caring	disapproval	disapproval		disapproval
-90	neutral	admiration	admiration	joy	joy
-94	realization	realization	realization	relief	relief
-95	neutral	amusement	disapproval	confusion	annoyance
-96	joy	annoyance	annoyance	disapproval	annoyance
-100	neutral	confusion	curiosity	confusion	curiosity
+16	neutral	disgust	disapproval	disapproval	disgust
+20	neutral	neutral	neutral	neutral	confusion
+28	confusion	curiosity	curiosity	curiosity	confusion
+29	joy	joy	joy	joy	gratitude
+30	neutral	disappointment	disapproval	disapproval	disappointment
+34	neutral	disappointment	disappointment	disappointment	
+35	disapproval	amusement	amusement	disapproval	disapproval
+40	neutral	surprise	fear	surprise	surprise
+43	neutral	joy	joy	amusement	amusement
+48	gratitude	curiosity	neutral	gratitude	curiosity
+51	excitement	surprise	surprise	admiration	surprise
+52	neutral	neutral	neutral	curiosity	curiosity
+63	neutral	confusion	confusion	fear	disgust
+64	amusement	anger	disgust	annoyance	anger
+66	approval	disapproval	neutral	amusement	neutral
+68	approval	optimism	relief	relief	relief
+75	remorse	disapproval	disapproval	disapproval	disappointment
+78	neutral	disapproval	annoyance	annoyance	annoyance
+79	curiosity	confusion	confusion	confusion	curiosity
+80	neutral	amusement	amusement	neutral	amusement
+81	curiosity		fear	fear	fear
+84	annoyance	amusement	amusement	excitement	amusement
+86	neutral	disapproval	anger	disapproval	disapproval
+88	caring	approval	disapproval	disapproval	
+90	neutral	joy	admiration	joy	admiration
+93	admiration	admiration	admiration	joy	admiration
+94	realization	relief	relief	realization	relief
+95	neutral	disapproval	disapproval	annoyance	disapproval
+96	joy	annoyance	disapproval	annoyance	annoyance
+97	neutral	disgust	embarrassment	disgust	disgust
 101	neutral	disapproval	disappointment	disappointment	disapproval
 103	annoyance	annoyance	annoyance	annoyance	anger
 113	disappointment	disappointment	disappointment		disappointment

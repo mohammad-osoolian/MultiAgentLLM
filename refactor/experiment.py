@@ -73,7 +73,7 @@ class DebateExperiment:
         self.make_directories()
         for i in range(len(self.agents)):
             self.agents[i].logger = AgentLogger(f'{self.basepath}/logs/agent{i+1}.json')
-        self.metrics = {'agent_wins':[0 for i in range(len(self.agents))]}
+        self.metrics = {'agent_wins':[0 for i in range(len(self.agents))], 'switch_answers': 0}
         self.results = self.data.results_template()
         newcols = [f'predict{i+1}' for i in range(len(self.agents))] + [f'error{i+1}' for i in range(len(self.agents))] + [f'explanation{i+1}' for i in range(len(self.agents))]+ ['debate_predict', 'rounds']
         self.results = self.results.assign(**{col: None for col in newcols})
@@ -153,11 +153,22 @@ class DebateExperiment:
                     self.find_winners(prev_predicts, predicts)
                     self.results.at[i, 'rounds'] = round+1
                     break
+                if self.switch_answers(prev_predicts, predicts):
+                    self.metrics['switch_answers'] += 1
+                    print("switch:", self.metrics['switch_answers'])
+                
+
             self.results.at[i, 'debate_predict'] = self.final_predict(predicts)
             self.messure_metrics()
             self.write_single_agent_results()
             self.messure_agent_metrics()
             self.write_results()
+
+    def switch_answers(self, prev, new):
+        for i in range(len(prev)):
+            if not(new[i] != prev[i] and new[i] in prev):
+                return False
+        return True
 
     def find_winners(self, prev_predicts, newpredicts):
         final = self.final_predict(newpredicts)
@@ -172,6 +183,11 @@ class DebateExperiment:
         new_expls = [] 
         new_errors = []
         for agent_index, agent in enumerate(self.agents):
+            if agent_index == 0:
+                new_predicts.append(predicts[0])
+                new_expls.append(expls[0])
+                new_errors.append(errors[0])
+                continue
             new_result, new_err = agent.update_answer(predicts, expls, errors, text, agent_index)
             new_predict, new_expl = new_result['predict'], new_result['explanation']
             new_predicts.append(new_predict)

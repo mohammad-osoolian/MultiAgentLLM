@@ -1,0 +1,117 @@
+id	label	predict2	explanation2	error2
+5	annoyance	anger	The phrase 'Dirty Southern Wankers' contains derogatory language that expresses strong negative feelings towards a specific group, likely indicating a sense of anger or resentment. The use of the term 'wankers' suggests contempt, and the adjective 'dirty' adds a layer of insult, further reinforcing the emotional tone of anger.	0
+6	surprise	disapproval	The statement expresses a strong negative opinion about Peyton's abilities, using terms like 'isn't good enough' and 'dumbass' to convey frustration and disdain. This tone indicates a lack of respect or approval towards both the player and the fans being criticized.	0
+7	gratitude			1
+8	admiration	disapproval	The use of 'Damn' indicates frustration or discontent, while the phrase 'outrage drama' suggests a negative view of the situation, implying that the speaker disapproves of how YouTube's drama is being handled and its profitable impact on Reddit.	0
+9	neutral	curiosity	The phrase suggests an interest in understanding the connection between a friend's trustworthiness and a potential issue or topic. The use of 'might be linked' indicates a speculative scenario that invites further exploration or clarification, which aligns with the emotion of curiosity.	0
+10	confusion	curiosity	The sentence expresses a sense of wonder or inquiry about the demographics of cable TV viewers, subtly questioning the trends among younger individuals. The speaker seems to seek information or affirmation about their observation, which aligns with the emotion of curiosity.	0
+13	annoyance	anger	The use of strong language ('same fucking problem') indicates frustration and dissatisfaction. The phrase suggests that the speaker is upset about the recurring issue, while also making a minor observation about improvement ('slightly better command of the English language'). This combination typically reflects anger towards the situation being addressed.	0
+16	neutral	disapproval	The phrase expresses a negative judgment or condemnation of someone's actions or state of being, indicating a strong sense of disapproval towards them. The use of the term 'retardation' in this context suggests a derogatory view, which further emphasizes the speaker's disdain.	0
+20	neutral	neutral	The sentence conveys a straightforward piece of information about the release of a name, without expressing any strong emotions. It simply states a fact about the inability to post the name, which does not signal feelings of excitement, disappointment, or any other emotion listed.	0
+28	confusion			
+29	joy			
+30	neutral			
+34	neutral			
+35	disapproval			
+40	neutral			
+43	neutral			
+48	gratitude			
+51	excitement			
+52	neutral			
+63	neutral			
+64	amusement			
+66	approval			
+68	approval			
+75	remorse			
+78	neutral			
+79	curiosity			
+80	neutral			
+81	curiosity			
+84	annoyance			
+86	neutral			
+88	caring			
+90	neutral			
+93	admiration			
+94	realization			
+95	neutral			
+96	joy			
+97	neutral			
+100	neutral			
+101	neutral			
+103	annoyance			
+113	disappointment			
+119	neutral			
+127	admiration			
+128	fear			
+129	love			
+131	neutral			
+132	annoyance			
+133	neutral			
+141	optimism			
+146	admiration			
+147	joy			
+151	gratitude			
+152	admiration			
+155	joy			
+157	curiosity			
+158	approval			
+160	annoyance			
+161	approval			
+166	love			
+169	curiosity			
+170	joy			
+172	gratitude			
+174	neutral			
+175	approval			
+178	confusion			
+179	neutral			
+184	admiration			
+185	sadness			
+186	admiration			
+191	neutral			
+195	neutral			
+196	approval			
+197	neutral			
+198	confusion			
+199	disapproval			
+201	curiosity			
+202	neutral			
+203	neutral			
+205	approval			
+210	sadness			
+214	curiosity			
+216	annoyance			
+217	sadness			
+219	neutral			
+221	neutral			
+222	disappointment			
+224	love			
+228	gratitude			
+229	neutral			
+230	annoyance			
+235	disappointment			
+241	approval			
+242	neutral			
+244	confusion			
+245	approval			
+249	neutral			
+250	disapproval			
+257	admiration			
+260	disapproval			
+262	neutral			
+267	optimism			
+268	amusement			
+270	neutral			
+273	neutral			
+274	surprise			
+275	annoyance			
+279	disapproval			
+281	amusement			
+286	neutral			
+287	neutral			
+289	neutral			
+291	admiration			
+294	curiosity			
+296	optimism			
+297	disgust			
+299	surprise			

@@ -106,7 +106,7 @@ class DebateAgent(ZeroShotLlm):
         self.messages = [self.messages[0]]
     
     def argue(self, text):
-        return self.predict(text, keep_history=False)
+        return self.predict(text, keep_history=True)
         
     def update_answer(self, predicts, expls, errors, text, agent_index):
         update_answer_prompt = self.build_update_answer_prompt(predicts, expls, errors, text, agent_index)
@@ -130,5 +130,6 @@ class DebateAgent(ZeroShotLlm):
                 f"Explanation: {expls[i]}\n"
             )
             allanswers.append(answer)
-        prompt = text + '\n' + utils.UPDATE_ANSWER_MESSAGE + '\n' + your_answer + '\n'.join(allanswers)
+        prompt = utils.UPDATE_ANSWER_MESSAGE + '\n' + "sentence: " + text + '\n' + your_answer + '\n'.join(allanswers)
+        # print(prompt)
         return prompt

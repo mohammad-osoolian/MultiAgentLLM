@@ -35,14 +35,14 @@ instruction = (
 output_schema1 = (
     "{\n"
     '   "category": "<predicted category>",\n'
-    '   "explanation": "<your explanation in about 50 words>"\n'
+    '   "explanation": "<your explanation>"\n'
     "}"
 )
 
 output_schema2 = (
     "{\n"
     '   "category": "<predicted category>",\n'
-    '   "explanation": "<your explanation in about 100 words>"\n'
+    '   "explanation": "<your explanation>"\n'
     "}"
 )
 
@@ -56,5 +56,5 @@ agent2 = DebateAgent('gpt-4o-mini', client, config2, temperature=1)
 # agent3 = DebateAgent('gpt-4o-mini', client, config, temperature=1)
 
 # debate = DebateExperiment(data, [agent1, agent2], '../experiments/debate/number_pattern/same-agents-4o-mini')
-debate = DebateExperiment(data, [agent1, agent2], os.path.join('../experiments', 'debate', 'goemotions', 'short-explanation-long-explanation'))
+debate = DebateExperiment(data, [agent1, agent2], os.path.join('../experiments', 'debate', 'goemotions', 'repeat-answer'))
 debate.run()

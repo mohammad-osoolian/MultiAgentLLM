@@ -1,0 +1,117 @@
+id	label	debate_predict	rounds
+5	annoyance	disgust	1
+6	surprise	disapproval	0
+7	gratitude	excitement	1
+8	admiration	anger	0
+9	neutral	curiosity	0
+10	confusion	curiosity	0
+13	annoyance	anger	0
+16	neutral	disapproval	1
+20	neutral	neutral	0
+28	confusion	curiosity	0
+29	joy	gratitude	1
+30	neutral	disapproval	1
+34	neutral		0
+35	disapproval	disapproval	0
+40	neutral	surprise	0
+43	neutral	amusement	1
+48	gratitude	neutral	1
+51	excitement	surprise	0
+52	neutral	curiosity	0
+63	neutral	confusion	0
+64	amusement	annoyance	0
+66	approval	amusement	1
+68	approval	relief	0
+75	remorse	disappointment	1
+78	neutral	annoyance	0
+79	curiosity	confusion	0
+80	neutral	confusion	0
+81	curiosity	fear	0
+84	annoyance	amusement	
+86	neutral	disapproval	0
+88	caring	disapproval	0
+90	neutral	admiration	0
+93	admiration	admiration	0
+94	realization	relief	1
+95	neutral	disappointment	1
+96	joy	disapproval	0
+97	neutral	embarrassment	1
+100	neutral	confusion	0
+101	neutral	disappointment	1
+103	annoyance	annoyance	0
+113	disappointment	disappointment	1
+119	neutral	neutral	
+127	admiration	gratitude	0
+128	fear	anger	1
+129	love	admiration	1
+131	neutral	disappointment	0
+132	annoyance	annoyance	1
+133	neutral	curiosity	1
+141	optimism	approval	0
+146	admiration	admiration	1
+147	joy	gratitude	1
+151	gratitude	optimism	0
+152	admiration	optimism	1
+155	joy	amusement	1
+157	curiosity	curiosity	0
+158	approval		0
+160	annoyance	anger	
+161	approval	anger	1
+166	love	disappointment	0
+169	curiosity	confusion	0
+170	joy	admiration	0
+172	gratitude	gratitude	0
+174	neutral	disappointment	1
+175	approval	approval	0
+178	confusion	curiosity	1
+179	neutral	neutral	1
+184	admiration	admiration	0
+185	sadness	sadness	0
+186	admiration	confusion	0
+191	neutral	confusion	1
+195	neutral	disgust	1
+196	approval	neutral	1
+197	neutral	disappointment	1
+198	confusion	disapproval	1
+199	disapproval	anger	1
+201	curiosity	curiosity	1
+202	neutral	disgust	0
+203	neutral	anger	0
+205	approval	curiosity	1
+210	sadness	sadness	1
+214	curiosity	annoyance	1
+216	annoyance	anger	0
+217	sadness	disappointment	1
+219	neutral	surprise	0
+221	neutral	disapproval	0
+222	disappointment	disapproval	0
+224	love	joy	
+228	gratitude	disapproval	1
+229	neutral	confusion	0
+230	annoyance	disapproval	0
+235	disappointment	disappointment	1
+241	approval	joy	0
+242	neutral	anger	1
+244	confusion	amusement	0
+245	approval	excitement	1
+249	neutral	excitement	
+250	disapproval	disapproval	0
+257	admiration	joy	1
+260	disapproval	annoyance	0
+262	neutral	disapproval	1
+267	optimism	amusement	0
+268	amusement	amusement	0
+270	neutral	disapproval	0
+273	neutral		0
+274	surprise	surprise	0
+275	annoyance	surprise	1
+279	disapproval	curiosity	0
+281	amusement	joy	0
+286	neutral	neutral	1
+287	neutral	neutral	1
+289	neutral	sadness	
+291	admiration		
+294	curiosity		
+296	optimism		
+297	disgust		
+299	surprise		

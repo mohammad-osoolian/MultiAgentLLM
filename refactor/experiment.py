@@ -183,11 +183,11 @@ class DebateExperiment:
         new_expls = [] 
         new_errors = []
         for agent_index, agent in enumerate(self.agents):
-            if agent_index == 0:
-                new_predicts.append(predicts[0])
-                new_expls.append(expls[0])
-                new_errors.append(errors[0])
-                continue
+            # if agent_index == 0:
+            #     new_predicts.append(predicts[0])
+            #     new_expls.append(expls[0])
+            #     new_errors.append(errors[0])
+            #     continue
             new_result, new_err = agent.update_answer(predicts, expls, errors, text, agent_index)
             new_predict, new_expl = new_result['predict'], new_result['explanation']
             new_predicts.append(new_predict)

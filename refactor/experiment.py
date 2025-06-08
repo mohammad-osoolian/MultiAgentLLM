@@ -163,6 +163,10 @@ class DebateExperiment:
             self.write_single_agent_results()
             self.messure_agent_metrics()
             self.write_results()
+        self.messure_metrics()
+        self.write_single_agent_results()
+        self.messure_agent_metrics()
+        self.write_results()
 
     def switch_answers(self, prev, new):
         for i in range(len(prev)):
@@ -217,9 +221,10 @@ class DebateExperiment:
     def messure_metrics(self):
         predicts = self.results['debate_predict'].tolist()
         labels = self.results['label'].tolist()
-        # all_predictions = [self.results[f'predict{i+1}'].tolist() for i in range(len(self.agents))]
-        # self.metrics['analysis'] = metrics.analysis_debate_potential(all_predictions, labels)
+        all_predictions = [self.results[f'predict{i+1}'].tolist() for i in range(len(self.agents))]
+        self.metrics['analysis'] = metrics.analysis_debate_potential(all_predictions, labels)
         self.metrics['accuracy'] = metrics.accuracy(labels, predicts)
+        self.metrics['info'] = self.info()
         # self.metrics['ml_accuracy'] = metrics.multi_label_acc(labels, predicts, 28)
     
     def write_results(self):
@@ -227,3 +232,10 @@ class DebateExperiment:
         df.to_csv(f'{self.basepath}/results/debate-result.tsv', sep='\t', index=False)
         with open(f'{self.basepath}/metrics.json', 'w') as f:
             f.write(json.dumps(self.metrics))
+
+    def info(self):
+        info = dict()
+        info['agent_info'] = [agent.info() for agent in self.agents]
+        info['dataset_info'] = self.data.info()
+        info['date'] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        return info

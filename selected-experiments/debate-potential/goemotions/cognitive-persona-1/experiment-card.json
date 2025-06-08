@@ -1,1 +1,42 @@
-{"agent_info": {"model": "gpt-4o-mini", "temperature": 1, "system_prompt": "You are a logical analyst who categorizes emotions with maximum precision. You rely only on explicit linguistic cues and avoid speculation or empathy. Choose the most accurate label based on lexical and syntactic analysis. and identify the single most dominant emotion it expresses from the following categories: admiration, amusement, anger, annoyance, approval, caring, confusion, curiosity, desire, disappointment, disapproval, disgust, embarrassment, excitement, fear, gratitude, grief, joy, love, nervousness, optimism, pride, realization, relief, remorse, sadness, surprise, neutral.\n\nReturn your response as a JSON object with this format:\n{\n   \"category\": \"<predicted category>\",\n   \"explanation\": \"<leave this field blank>\"\n}"}, "dataset_info": {"dataset_path": "../datasets/goemotions_single_labeled.tsv", "classes": ["admiration", "amusement", "anger", "annoyance", "approval", "caring", "confusion", "curiosity", "desire", "disappointment", "disapproval", "disgust", "embarrassment", "excitement", "fear", "gratitude", "grief", "joy", "love", "nervousness", "optimism", "pride", "realization", "relief", "remorse", "sadness", "surprise", "neutral"], "number_of_samples": 100}, "date": "2025-05-10 19:50:50"}
+{
+    "agent_info": {
+        "model": "gpt-4o-mini",
+        "temperature": 1,
+        "system_prompt": "You are a logical analyst who categorizes emotions with maximum precision. You rely only on explicit linguistic cues and avoid speculation or empathy. Choose the most accurate label based on lexical and syntactic analysis. and identify the single most dominant emotion it expresses from the following categories: admiration, amusement, anger, annoyance, approval, caring, confusion, curiosity, desire, disappointment, disapproval, disgust, embarrassment, excitement, fear, gratitude, grief, joy, love, nervousness, optimism, pride, realization, relief, remorse, sadness, surprise, neutral.\n\nReturn your response as a JSON object with this format:\n{\n   \"category\": \"<predicted category>\",\n   \"explanation\": \"<leave this field blank>\"\n}"
+    },
+    "dataset_info": {
+        "dataset_path": "../datasets/goemotions_single_labeled.tsv",
+        "classes": [
+            "admiration",
+            "amusement",
+            "anger",
+            "annoyance",
+            "approval",
+            "caring",
+            "confusion",
+            "curiosity",
+            "desire",
+            "disappointment",
+            "disapproval",
+            "disgust",
+            "embarrassment",
+            "excitement",
+            "fear",
+            "gratitude",
+            "grief",
+            "joy",
+            "love",
+            "nervousness",
+            "optimism",
+            "pride",
+            "realization",
+            "relief",
+            "remorse",
+            "sadness",
+            "surprise",
+            "neutral"
+        ],
+        "number_of_samples": 100
+    },
+    "date": "2025-05-10 19:50:50"
+}

@@ -23,9 +23,13 @@ def extractor(predict):
         result['explanation'] = predict['explanation']
     return result 
 
-persona = (
-    "You are an expert in emotional analysis and language understanding. You deeply understand nuances in language and context, and you consider tone, implication, and word choice to identify the most appropriate emotional label"
-)
+# persona1 = (
+#     "You are an expert in emotional analysis and language understanding. You deeply understand nuances in language and context, and you consider tone, implication, and word choice to identify the most appropriate emotional label"
+# )
+
+persona1 = "You are a logical analyst who categorizes emotions with maximum precision. You rely only on explicit linguistic cues and avoid speculation or empathy."
+
+persona2 = ''
 
 instruction = (
     "Your task is to classify the emotional content of a sentence into one of 28 emotion categories and explain why. here are the list of categories: "
@@ -46,15 +50,15 @@ output_schema2 = (
     "}"
 )
 
-data = DataHandler(os.path.join('../datasets', 'debate_goemotions_single_labeled.tsv'))
+data = DataHandler(os.path.join('../datasets', 'goemotions_single_labeled.tsv'))
 client = OpenAI(api_key=utils.API_KEY)
-config1 = DebateAgentConfig(persona, instruction, output_schema1, validator, extractor)
-config2 = DebateAgentConfig(persona, instruction, output_schema2, validator, extractor)
+config1 = DebateAgentConfig(persona1, instruction, output_schema1, validator, extractor)
+config2 = DebateAgentConfig(persona2, instruction, output_schema2, validator, extractor)
 
 agent1 = DebateAgent('gpt-4o-mini', client, config1, temperature=1)
-agent2 = DebateAgent('gpt-4o-mini', client, config2, temperature=1)
+agent2 = DebateAgent('gpt-4o-mini', client, config2, temperature=1.5)
 # agent3 = DebateAgent('gpt-4o-mini', client, config, temperature=1)
 
 # debate = DebateExperiment(data, [agent1, agent2], '../experiments/debate/number_pattern/same-agents-4o-mini')
-debate = DebateExperiment(data, [agent1, agent2], os.path.join('../experiments', 'debate', 'goemotions', 'repeat-answer'))
+debate = DebateExperiment(data, [agent1, agent2], os.path.join('../experiments', 'debate', 'goemotions', 'debate-efficiency-2'))
 debate.run()

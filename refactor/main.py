@@ -24,14 +24,14 @@ from experiment import *
 # ]
 
 # data = DataHandler('../datasets/emotion.tsv', classes)
-r1 = ResultHandler('../experiments/number_pattern/exp1/results/zeroshot-result.tsv')
-r2 = ResultHandler('../experiments/number_pattern/temp1/result/classification-result.tsv')
-r3 = ResultHandler('../experiments/number_pattern/temp2/result/classification-result.tsv')
+r1 = ResultHandler('../selected-experiments/debate-potential/goemotions/cognitive-persona-1/result/classification-result.tsv')
+r2 = ResultHandler('../selected-experiments/debate-potential/goemotions/temper-2-with-description-3/result/classification-result.tsv')
+r3 = ResultHandler('../selected-experiments/debate-potential/goemotions/temper-15/result/classification-result.tsv')
 # r1 = ResultHandler('../experiments/number_pattern/temp15/result/classification-result.tsv')
 # df4 = ResultHandler('../experiments/goemotions/exp4/results/zeroshot-result.tsv').df
 # dfs = [df1, df2]
 
-print(analysis_debate_potential([r1.predicts, r2.predicts, r3.predicts], r1.labels))
+print(analysis_debate_potential([r1.predicts, r2.predicts, r2.predicts], r1.labels))
 
 # predicts = pd.concat([df['predict'] for df in dfs] + [df['explanation'] for df in dfs], axis=1)
 # predicts.columns = [f'predict_{i}' for i in range(len(dfs))] + [f'explanation_{i}' for i in range(len(dfs))]

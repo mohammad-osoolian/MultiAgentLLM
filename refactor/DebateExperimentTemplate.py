@@ -6,20 +6,20 @@ from debate import Debate
 import utils
 from openai import OpenAI
 
-classes = [
-'admiration', 'amusement', 'anger', 'annoyance', 'approval', 'caring', 'confusion', 'curiosity', 
-'desire', 'disappointment', 'disapproval', 'disgust', 'embarrassment', 'excitement', 'fear', 
-'gratitude', 'grief', 'joy', 'love', 'nervousness', 'optimism', 'pride', 'realization', 'relief', 
-'remorse', 'sadness', 'surprise', 'neutral',
-]
+# classes = [
+# 'admiration', 'amusement', 'anger', 'annoyance', 'approval', 'caring', 'confusion', 'curiosity', 
+# 'desire', 'disappointment', 'disapproval', 'disgust', 'embarrassment', 'excitement', 'fear', 
+# 'gratitude', 'grief', 'joy', 'love', 'nervousness', 'optimism', 'pride', 'realization', 'relief', 
+# 'remorse', 'sadness', 'surprise', 'neutral',
+# ]
 
 def validator(predict):
-    return 'category' in predict and 'explanation' in predict and predict['category'] in classes
+    return 'next_number' in predict and 'explanation' in predict and predict['next_number'].isdigit()
 
 def extractor(predict):
     result = {'predict': '', 'explanation': ''}
     if predict is not None: 
-        result['predict'] = predict['category']
+        result['predict'] = predict['next_number']
         result['explanation'] = predict['explanation']
     return result 
 
@@ -27,38 +27,41 @@ def extractor(predict):
 #     "You are an expert in emotional analysis and language understanding. You deeply understand nuances in language and context, and you consider tone, implication, and word choice to identify the most appropriate emotional label"
 # )
 
-persona1 = "You are a logical analyst who categorizes emotions with maximum precision. You rely only on explicit linguistic cues and avoid speculation or empathy."
+# persona1 = "You are a logical analyst who categorizes emotions with maximum precision. You rely only on explicit linguistic cues and avoid speculation or empathy."
+
+persona1 = "You are an expert mathematician and puzzle solver. You specialize in identifying number patterns, analyzing sequences, and determining the next logical number in a series."
 
 persona2 = ''
 
+# instruction = (
+#     "Your task is to classify the emotional content of a sentence into one of 28 emotion categories and explain why. here are the list of categories: "
+#     "admiration, amusement, anger, annoyance, approval, caring, confusion, curiosity, desire, disappointment, disapproval, disgust, embarrassment, excitement, fear, gratitude, grief, joy, love, nervousness, optimism, pride, realization, relief, remorse, sadness, surprise, neutral\n"
+#     "return your response as a JSON object with the following format:"
+# )
+
 instruction = (
-    "Your task is to classify the emotional content of a sentence into one of 28 emotion categories and explain why. here are the list of categories: "
-    "admiration, amusement, anger, annoyance, approval, caring, confusion, curiosity, desire, disappointment, disapproval, disgust, embarrassment, excitement, fear, gratitude, grief, joy, love, nervousness, optimism, pride, realization, relief, remorse, sadness, surprise, neutral\n"
-    "return your response as a JSON object with the following format:"
+    "Your task is to find the pettern between numbers and perdict the next number"
+    " return your response as a JSON object with the following format:"
 )
+
 output_schema1 = (
     "{\n"
-    '   "category": "<predicted category>",\n'
+    '   "next_number": "<predicted number>",\n'
     '   "explanation": "<your explanation>"\n'
     "}"
 )
 
-output_schema2 = (
-    "{\n"
-    '   "category": "<predicted category>",\n'
-    '   "explanation": "<your explanation>"\n'
-    "}"
-)
+output_schema2 = output_schema1
 
-data = DataHandler(os.path.join('../datasets', 'goemotions_single_labeled.tsv'))
+data = DataHandler(os.path.join('../datasets', 'number_pattern.tsv'))
 client = OpenAI(api_key=utils.API_KEY)
 config1 = DebateAgentConfig(persona1, instruction, output_schema1, validator, extractor)
 config2 = DebateAgentConfig(persona2, instruction, output_schema2, validator, extractor)
 
 agent1 = DebateAgent('gpt-4o-mini', client, config1, temperature=1)
-agent2 = DebateAgent('gpt-4o-mini', client, config2, temperature=1.5)
+agent2 = DebateAgent('gpt-4o-mini', client, config2, temperature=1)
 # agent3 = DebateAgent('gpt-4o-mini', client, config, temperature=1)
 
 # debate = DebateExperiment(data, [agent1, agent2], '../experiments/debate/number_pattern/same-agents-4o-mini')
-debate = DebateExperiment(data, [agent1, agent2], os.path.join('../experiments', 'debate', 'goemotions', 'debate-efficiency-2'))
+debate = DebateExperiment(data, [agent1, agent2], os.path.join('../experiments', 'debate', 'number_pattern', 'debate-efficiency-2'))
 debate.run()

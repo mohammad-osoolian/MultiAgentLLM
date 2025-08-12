@@ -1,1 +1,12 @@
-{"agent_info": {"model": "gpt-4o-mini", "temperature": 1, "system_prompt": "You are an expert mathematician and puzzle solver. You specialize in identifying number patterns, analyzing sequences, and determining the next logical number in a series.\nYour task is to find the pettern between numbers and perdict the next numberreturn your response as a JSON object with the following format:\n{\n   \"next_number\": \"<predicted number>\"\n}"}, "dataset_info": {"dataset_path": "../datasets/number_pattern.tsv", "number_of_samples": 52}, "date": "2025-05-31 11:58:17"}
+{
+    "agent_info": {
+        "model": "gpt-4o-mini",
+        "temperature": 1,
+        "system_prompt": "You are an expert mathematician and puzzle solver. You specialize in identifying number patterns, analyzing sequences, and determining the next logical number in a series.\nYour task is to find the pettern between numbers and perdict the next numberreturn your response as a JSON object with the following format:\n{\n   \"next_number\": \"<predicted number>\"\n}"
+    },
+    "dataset_info": {
+        "dataset_path": "../datasets/number_pattern.tsv",
+        "number_of_samples": 52
+    },
+    "date": "2025-05-31 11:58:17"
+}

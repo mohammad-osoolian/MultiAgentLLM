@@ -1,0 +1,158 @@
+id	label	predict1	explanation1	error1
+1	11	11	The sequence consists of consecutive integers starting from 7. Each number is incremented by 1 from the previous number. Therefore, after 10, the next number is 10 + 1, which equals 11.	0
+2	37	37	The pattern in the series involves adding 9 to each preceding number. Starting from 1: 1 + 9 = 10, 10 + 9 = 19, 19 + 9 = 28, and thus 28 + 9 = 37.	0
+3	19	19	The given sequence is increasing by 3 each time. Starting with 7, we add 3 to get 10, add 3 to get 13, and add 3 to get 16. Therefore, adding 3 to the last number 16 gives us 19 as the next number.	0
+4	27	27	The sequence increases by 5 each time. The difference between consecutive numbers is 5: 12 - 7 = 5, 17 - 12 = 5, and 22 - 17 = 5. Following this pattern, the next number would be 22 + 5 = 27.	0
+5	4	4	The pattern consists of the repeating number 4. There are no changes or variations in the sequence, indicating that the next number will also be 4.	0
+6	426	426	"To find the pattern in the given series 1, 6, 26, 106, we can examine the differences between consecutive numbers: 
+6 - 1 = 5,
+26 - 6 = 20,
+106 - 26 = 80. 
+Now, we can observe the differences: 5, 20, 80. These numbers can also be represented in powers of 4: 4^1 + 1, 4^2 + 4, 4^3 + 0. If we look at the pattern closely, each term seems to relate to multiplying the previous difference by 4. Therefore, the next difference would be 80 * 4 = 320. Adding that to the last number, we get 106 + 320 = 426. Thus, the next number is 426."	0
+7	15	15	The sequence consists of consecutive odd numbers starting from 7. Each number is obtained by adding 2 to the previous number: 7 + 2 = 9, 9 + 2 = 11, 11 + 2 = 13. Continuing this pattern, the next number would be 13 + 2 = 15.	0
+8	12405	12385	The sequence of numbers can be understood through the formula: a(n) = n^3 + n^2 + n. The first term (5) corresponds to n=1: 1^3 + 1^2 + 1 = 3, but should give 5 as the correct form adjusts to start at 2. The second term (36) corresponds to n=2: 2^3 + 2^2 + 2 = 8 + 4 + 2 = 14, adding 22 adjusts it to fit 36. The third term (253) can similarly be calculated with modifications. The fourth term (1772) holds the pattern of growing exponentially. Now when moving to n=5, calculating gives: 5^3 + 5^2 + 5 = 125 + 25 + 5 = 155. Compounding each previous term would give the final iteration number 12385 fitting into the sequence incrementally.	0
+9	486	486	Each number is multiplied by 3 to get the next number. Starting with 6: 6 * 3 = 18, then 18 * 3 = 54, then 54 * 3 = 162. Therefore, the next number is 162 * 3 = 486.	0
+10	2400	1680	The numbers appear to follow a specific pattern involving factorial growth. Each number in the sequence seems to involve factorials and their products: 0! * 1! * 2! * 3! for 0, 1! * 2! * 3! * 4! for 6, 2! * 3! * 4! * 5! for 48, and 3! * 4! * 5! * 6! for 342. Following this trend, the next term should apply 4! * 5! * 6! * 7! which equals 1680.	0
+11	65536	65536	The pattern in the series involves exponentiation. Each number can be represented as a power of 2: 2^1 = 2, 2^2 = 4, 2^4 = 16, and 2^8 = 256. The exponents themselves are growing in powers of 2: 1, 2, 4, 8. Following this logic, the next exponent would be 16 (the next power of 2), so the next number is 2^16, which equals 65536.	0
+12	1806	1806	The sequence follows a specific pattern where each term is obtained by multiplying the previous term by its position in the sequence (starting from 1). For example: 1 (1st term) * 1 = 1; 2 (2nd term) * 2 = 2; 6 (3rd term) * 3 = 18; 42 (4th term) * 5 = 210. Therefore, the next term following this pattern is 42 (4th term) * 5 = 210.	0
+13	10939557	1085003007	"The pattern in the sequence can be derived by multiplying the previous number by a progressively larger number and then adding an incrementally larger number. Specifically: 
+- From 2 to 7: (2 * 3) + 1 = 6 + 1 = 7 
+- From 7 to 57: (7 * 8) + 1 = 56 + 1 = 57 
+- From 57 to 3307: (57 * 58) + 1 = 3306 + 1 = 3307 
+Following this pattern, the next step would be: (3307 * 3308) + 1 = 1092242756 + 1 = 1092242757. This can be simplified as: 3307 * 3308 results in a number that is denoted as 1085003007, and when adding 1, we get 1085003007 as the next number."	0
+14	10939556	109154150006	The pattern in the series is as follows: Each number is formed based on the previous number's value. To derive the next number in the sequence, we take the previous number and concatenate its value calculated with a specific mathematical transformation. Specifically, the transformation is: each number can be seen as concatenating its value with the following sequence of computations. For example: starting with 1, we add a certain increasing function that generates these large spikes. Here, it appears that each number follows a specific exponential growth related to its index in the sequence. Thus, the next exponentiated results yield a value of 109154150006.	0
+15	31	31	To determine the pattern, let's look at the differences between successive numbers: 2 - 7 = -5, 9 - 2 = 7, 11 - 9 = 2, 20 - 11 = 9. The sequence of differences is -5, 7, 2, 9. Next, notice the differences between the differences: 7 - (-5) = 12, 2 - 7 = -5, 9 - 2 = 7. This gives us a secondary sequence of differences: 12, -5, 7. Following this pattern, predicting the next difference should be 12 + 7 = 19. Adding this difference back to the last number in the series (20) gives us 20 + 11 = 31. However, it seems to have shifted values, which makes it slightly more complex, but the overarching relation is combining patterns. Thus, the next number in the sequence is 31.	0
+16	29	29	To find the pattern in the sequence, we can look at the differences between consecutive numbers. The differences are: 4 - 3 = 1, 7 - 4 = 3, 11 - 7 = 4, and 18 - 11 = 7. The differences themselves form the sequence: 1, 3, 4, 7. Now, let's examine the differences between these differences: 3 - 1 = 2, 4 - 3 = 1, and 7 - 4 = 3. The second level differences: 2, 1, 3 does not follow a clear pattern. However, if we instead look towards summing numbers in the sequence, the next number can be derived by adding the last two numbers (11 + 18 = 29). Hence, the next number in the series is 29.	0
+17	36	36	The pattern involves consecutive increments based on increasing differences. The differences between the numbers are: 6-2=4, 8-6=2, 14-8=6, 22-14=8. The differences between these differences are: 2-4=-2, 6-2=4, 8-6=2. The second differences appear to increase by 2 each time. Continuing this pattern, the next difference would be 10 (8 + 2), which added to the last number in the series (22) gives us 22 + 14 = 36, making the next number in the sequence 36.	0
+18	20	20	The differences between the numbers are as follows: 4 - 0 = 4, 4 - 4 = 0, 8 - 4 = 4, and 12 - 8 = 4. The sequence of differences is 4, 0, 4, 4. The next difference can be assumed to repeat the pattern and will be 8 (as it following an increase). Therefore, 12 + 8 = 20.	0
+19	40	40	The pattern involves adding the previous two numbers to get the next number in the sequence. Starting from the beginning: 5 + 5 = 10, 5 + 10 = 15, 10 + 15 = 25. Following this pattern, the next number should be 15 + 25 = 40.	0
+20	80	80	To find the next number in the sequence, we first analyze the differences between consecutive numbers: 8 - 4 = 4, 16 - 8 = 8, 28 - 16 = 12, and 48 - 28 = 20. The differences are 4, 8, 12, and 20. We note the differences themselves: 8 - 4 = 4, 12 - 8 = 4, and 20 - 12 = 8. We observe that the second differences are 4, 4, and 8. It appears that the pattern in the second differences suggests that they grow by 4, then by 8, which gives us a next difference of 12. Adding 12 to 20 gives us 32. Therefore, the next first difference will be 48 + 32 = 80.	0
+21	56	55	"The sequence appears to be generated by adding consecutive Fibonacci numbers to the previous number. Let's break it down: 
+- Start with 3. 
+- 3 + 5 (next Fibonacci number) = 8. 
+- 8 + 4 (previous two Fibonacci numbers: 3 and 5) = 12. 
+- 12 + 9 (previous two Fibonacci numbers: 5 and 8) = 21. 
+- 21 + 13 (previous two Fibonacci numbers: 8 and 13) = 34. 
+Following this pattern, the next number would be: 34 + 21 (the previous two Fibonacci numbers: 13 and 21) = 55."	0
+22	66	57	"To find the pattern in the series, we can look at the differences between consecutive numbers: 
+- 9 - 0 = 9 
+- 12 - 9 = 3 
+- 24 - 12 = 12 
+- 39 - 24 = 15 
+The differences form the sequence: 9, 3, 12, 15. Observing this sequence, we can note that the pattern in the differences is increasing. The difference between each of the consecutive differences is: 3 - 9 = -6, 12 - 3 = 9, 15 - 12 = 3.
+We can hypothesize that the next difference will be 15 + 3 = 18. Therefore, we add this to the last number in the series: 39 + 18 = 57. Thus, the next number should be 57."	0
+23	43	42	"To find the pattern, let's examine the differences between consecutive numbers: 
+- 4 - 3 = 1 
+- 9 - 4 = 5 
+- 15 - 9 = 6 
+- 26 - 15 = 11 
+
+Now, let's find the differences of these differences: 
+- 5 - 1 = 4 
+- 6 - 5 = 1 
+- 11 - 6 = 5 
+
+It seems that the second level of differences does not lead to a consistent pattern, so we can look at a different approach. 
+If we analyze the sequence another way: 
+- 3 + 1 = 4 
+- 4 + 5 = 9 
+- 9 + 6 = 15 
+- 15 + 11 = 26 
+
+Now, if we observe the added numbers (1, 5, 6, 11), it looks like they increase in a certain way: 
+- The differences between these added numbers: 
+5 - 1 = 4 
+6 - 5 = 1 
+11 - 6 = 5 
+
+Although they seem inconsistent, we see a trend in the progression of the total sequence based on additive growth. 
+Based on this unearthing, if we take the last number 26 and realize the additions seem to suggest the next addition could 16 (one more than 11 based on trends), it leads logically to:
+26 + 16 = 42.
+Thus the next number in the sequence is expected to be 42."	0
+24	59	51	To find the pattern, let's look at the differences between consecutive numbers: 0 - 1 = -1, 9 - 0 = 9, 17 - 9 = 8, and 34 - 17 = 17. The differences are: -1, 9, 8, 17. Now, look at the differences of these differences: 9 - (-1) = 10, 8 - 9 = -1, and 17 - 8 = 9. The second-level differences are: 10, -1, 9. There seems to be no clear pattern, so let's examine the original sequence again: Each term can be derived as follows: n^2 - 1 for n=1 gives us 0, for n=2 gives us 9, for n=3 gives us 17, for n=4 gives us 34 which seems not valid. Another perspective suggests looking at the sequence as building blocks: find sums or multiplication: 9 (from 0) + 8 (from 9) + 17 (from 8) equal sums that are growing dramatically. This indicates we should just continue this growth from 34. If we take the differences of the original numbers directly: adding 17 + 17 (following the existing pattern) provides that the next number would be 34 + 17 = 51.	0
+25	1959	1955	To identify the pattern in the sequence 1, 1, 12, 67, 364, we can observe the relationship between each number and the previous one. The differences between the numbers are: 0 (1-1), 11 (12-1), 55 (67-12), and 297 (364-67). The differences themselves appear to be multiplying by 5 and then increasing by 2 for the next consecutive difference: 11 = 1 * 11, 55 = 5 * 11, and 297 = 5 * 55 + 2. Continuing this pattern to find the next difference gives us: 1955 = 5 * 364 + 2, thus the next number in the sequence is expected to be 1955.	0
+26	966	1528	"To find the pattern, we can look at the relationship between the numbers. The sequence appears to be constructed by a pattern of addition, coupled with multiplication or some increasing factor. Observing the ratios and differences: 
+ - From 8 to 6, we see a decrease of 2 (which could suggest an adjustment). 
+ - From 6 to 40, the operation seems to involve multiplication (possibly) 6 * 7 - 2 = 40. 
+ - From 40 to 102, we have 40 * 2 + 22 = 102. 
+ - From 102, it seems the multiplication factor increases. 102 * 3 + 22 = 328. 
+ - Following the same pattern, if the next number follows a similar increase in multiplication while adjusting with an additive term: 328 * 4 + 24 = 1528.
+Therefore, the next number in the sequence is likely 1528."	0
+27	575	581	"To identify the pattern, let’s analyze the progression of the numbers. The transformation from each number to the next appears to follow a specific formula. Starting from 4, we can see: 
+
+1. 4 * 1 + 1 = 5 
+2. 5 * 4 + 3 = 23 
+3. 23 * 2 + 16 = 62 
+4. 62 * 3 + 8 = 194 
+
+It seems there might be a multiplication influenced by both an incrementing integer factor (multiplied by 1, then 4, then 2, then 3) and an additive component that varies. 
+By continuing this reasoning and checking how the operations appear: 
+
+Following the last number (194), the most plausible next transformation would be to multiply by the next integer (which appears to follow a sequence of 1, 4, 2, 3), taking the additive 8 then using 3. 
+Thus for 194, if we apply something to keep the incrementing factor and deduce what could be next it could yield:
+
+194 * 3 + 3 = 582,
+This does not yield a consistent approach, hence sticking to the more consistent component led us to find for reliable relations could lead us with multiplied by 3 and added consistently could yield: 
+
+If we anticipate based on previous behavior could stay consistent with the following methodology 
+194*3-1 could approach closely leading:
+581 
+
+The sequence trend points indeed to the factorial progression at plus values observed. Hence next number plausible is 581."	0
+28	675	780	"The pattern in the series can be derived as follows: Starting from 5, each number appears to be generated by multiplying the previous number by its index in the series and then applying a transformation based on an incrementing sequence. Specifically: 
+1. 5 (initial value)
+2. 0 (5 multiplied by 0, so 0)
+3. 5 (5 multiplied by 1, so 5)
+4. 25 (5 multiplied by 5, yielding 25)
+5. 130 (25 multiplied by 5 plus 5, yielding 130)
+Following this pattern, if we multiply 130 by 6 (the index of the next term) and add 5, we arrive at 780 (130 * 6 = 780 plus 0). Therefore, the next number in the series is 780."	0
+29	1	1	The pattern in the sequence appears to involve a recurring cycle of operations on the first number. Starting with 91261, when we take the sum of its digits (9 + 1 + 2 + 6 + 1 = 19), we get the second number in the sequence (19). Next, taking the sum of the digits of 19 (1 + 9 = 10) gives us the third number (10). Following this pattern, we take the sum of the digits of 10 (1 + 0 = 1), which gives us the next number in the sequence.	0
+30	9			1
+31	3	1	The sequence appears to represent a pattern of numbers being reduced significantly. The first number, 61023, dramatically decreases to 12, which then further decreases to 3. Notably, 12 is 1/5th of 61023 and 3 is 1/4th of 12. Following this reducing pattern, the next logical reduction would be 1, as it is 1/3rd of 3.	0
+32	1	4	To find the pattern, we can analyze the differences between the numbers. The first number is 70966, which is quite large compared to the following numbers. If we consider the digits in 70966, we can find that the sum of the digits (7 + 0 + 9 + 6 + 6) equals 28. The second number is 28. Now looking at 28, if we sum its digits (2 + 8), we get 10. Following the same method for 10, summing its digits (1 + 0) gives us 1. However, to continue the pattern effectively in this context, we can realize we may actually be halving or simplifying the previous results in some way. If we consider halving from 10, we approximate 5. However, if the pattern is strictly digit summation leading down through magnitude, the next number continues this downward trend. Since we have a consistent pattern of reducing sums leading to smaller numbers, going from 10’s digit sum to the nearest lower whole number, we'd expect to maintain the sequence leading us into a next logical step, rounding down or estimating if we wish to keep the integer nature of response showing 4 as a middle point before continuing into lower stages.	0
+33	37	37	The sequence consists of prime numbers: 19, 23, 29, and 31. The next prime number after 31 is 37.	0
+34	61	67	The given sequence consists of prime numbers: 43, 47, 53, and 59. Each of these numbers is a prime number, and the next prime number after 59 is 61, followed by 67. Thus, the next number in the series of prime numbers is 67.	0
+35	31	31	The given series consists of consecutive prime numbers: 17, 19, 23, and 29. The next prime number after 29 is 31.	0
+36	17	17	The given sequence is composed of prime numbers. The numbers 5, 7, 11, and 13 are all prime. The next prime number after 13 is 17.	0
+37	43	43	The given sequence consists of prime numbers: 29, 31, 37, and 41. The next prime number after 41 is 43.	0
+38	128	124	"The given sequence is generated by a specific pattern. If we observe the differences between consecutive terms: 
+- 13 - 6 = 7 
+- 30 - 13 = 17 
+- 61 - 30 = 31 
+These differences (7, 17, 31) suggest they are increasing. 
+If we look closely, the next difference can be calculated. The second difference of the differences is as follows: 
+- 17 - 7 = 10 
+- 31 - 17 = 14 
+This shows a pattern of increments by 4 (10 to 14). 
+If we apply this pattern, the next difference (after 31) should increment by 4 again: 31 + 18 = 49.
+Thus, the next number in the original sequence should be 61 + 49 = 124."	0
+39	113	109	"The pattern can be identified by examining the relationship between consecutive numbers. Each number in the sequence appears to be derived from the previous number by a specific calculation: 
+1. Starting with 5, the next number 12 is obtained by applying the formula: 5 * 2 + 2 = 12. 
+2. Next, from 12 to 25, we apply: 12 * 2 + 1 = 25. 
+3. From 25 to 54, we have: 25 * 2 + 4 = 54. 
+4. To find the next number after 54, we can look for a pattern in the added values: 2, 1, and 4. 
+It seems we also alternate additions with a specific derivation. The next addition step can be clarified as: 
+2, 1, 4, suggesting a pattern where we increment the last operation (1+3=4). From 54, we can apply: 54 * 2 + 1 = 109. Thus, the next number in the series should be 109."	0
+40	187	181	"To identify the pattern, we can analyze the differences between consecutive numbers in the series: 
+
+20 - 9 = 11 
+43 - 20 = 23 
+90 - 43 = 47 
+
+Now, let's examine the differences: 11, 23, 47. 
+ 
+These differences themselves have a pattern. The difference between 11 and 23 is 12, and the difference between 23 and 47 is 24. The difference is doubling each time (12 	imes 2 = 24), which suggests the next difference will be 47 + 48 (the next doubling of 12) = 95. 
+ 
+So, to find the next number in the series, we add this next difference to the last number: 90 + 95 = 185. Therefore, the next number in the series is 181."	0
+41	128	124	To find the pattern, let's analyze the differences between consecutive numbers: 13 - 6 = 7, 30 - 13 = 17, and 61 - 30 = 31. The differences are 7, 17, and 31. Observing these differences, we can see a pattern: the second difference (17 - 7 = 10) and the third difference (31 - 17 = 14) have a difference of 4. This indicates that the differences of the differences are increasing linearly. Continuing this pattern, the next difference after 31 would be 31 + 18 = 49. Adding this to the last number in the series gives us 61 + 49 = 110. However, the actual difference between the current terms creates a more complex pattern leading us to test various sequences. Respectively, we see the multiplication by sequential numbers: for instance, doubling and then adjusting the pattern. Eventually, if we adjust according to squared sequences or powers, we find that following this sequence logically leads to the prediction of 124. Thus, the next number is 124.	0
+42	85	85	To find the pattern in the sequence 3, 8, 19, 42, we can analyze how each number relates to the previous one. The differences between consecutive numbers are: 8 - 3 = 5, 19 - 8 = 11, and 42 - 19 = 23. The differences of these differences are: 11 - 5 = 6 and 23 - 11 = 12. Continuing this pattern, the next difference should be 12 + 6 = 18. Adding this to the last number in the sequence gives us 42 + 43 = 85 as the next number.	0
+43	4444	4444	The pattern in the sequence involves numbers that are formed by repeating the digits of their positions (1, 2, 3, ...). The first number is '1' (one time), the second number is '22' (two times), and the third number is '333' (three times). Following this pattern, the next number should be '4444' (four times the digit '4').	0
+44	22	22	To find the pattern, we can look at the differences between consecutive numbers: 4 - 2 = 2, 8 - 4 = 4, and 14 - 8 = 6. The differences are 2, 4, and 6, which form an increasing sequence by 2. Following this pattern, the next difference should be 8 (6 + 2). Therefore, the next number is 14 + 8 = 22.	0
+45	18	18	To find the pattern, we look at the differences between consecutive numbers in the sequence: 9 - 8 = 1, 11 - 9 = 2, and 14 - 11 = 3. The differences form the sequence 1, 2, 3. Following this pattern, the next difference should be 4. Therefore, we add 4 to the last number, 14: 14 + 4 = 18.	0
+46	34	34	To find the pattern in the sequence, let's observe the differences between consecutive numbers: 7 - 4 = 3, 13 - 7 = 6, and 22 - 13 = 9. The differences are increasing by 3 each time (3, 6, 9). Therefore, the next difference should be 12 (9 + 3). Adding this difference to the last number in the sequence: 22 + 12 = 34.	0
+47	42	42	The pattern in the sequence is determined by observing the differences between consecutive numbers: 6 - 2 = 4, 14 - 6 = 8, and 26 - 14 = 12. These differences (4, 8, 12) are increasing by 4 each time. Therefore, the next difference should be 12 + 4 = 16. Adding this to the last number in the sequence, 26 + 16, we get 42 as the next number.	0
+48	52	52	To find the pattern, let's examine the differences between consecutive numbers: 7 - 2 = 5, 17 - 7 = 10, 32 - 17 = 15. The differences are 5, 10, and 15, which increase by 5 each time. If this pattern continues, the next difference should be 20. Therefore, the next number in the series would be 32 + 20 = 52.	0
+49	72	108	The pattern in the series can be observed as follows: Starting with the numbers, we can see that the sequence is formed by multiplying the previous number in the sequence by its position in the sequence (1-based index). The first number is 3 (it stays the same), the second number is still 3 (it stays the same), the third number is 3 * 2 = 6, and the fourth number is 6 * 3 = 18. Continuing this logic, the next number will be 18 * 4 = 72. However, on careful observation, we notice that 18 is actually doubled to yield the next number, so the correct multiplication would be: 3, 3 * 1 = 3, 3 * 2 = 6, 6 * 3 = 18, and 18 * 6 = 108.	0
+50	192	384	The pattern in the sequence involves multiplying the previous number by an increasing factor. Starting with 8, the steps are as follows: 8 * 1 = 8, 8 * 2 = 16, 16 * 3 = 48. The next step would be to multiply the last number (48) by 4 (the increasing factor) which gives us 48 * 4 = 192. Continuing this way, to find the next number, note that each multiplication factor corresponds to its position in the sequence starting from 1. Continuing from this pattern, we will have: 48 (previous number) * 4 (next multiplier) = 192. However, there's a mistake in my last stage since we need to double check how we reach the next multipliers. So summarizing, it follows (8,8), (8,2), (16,3), (48,4) and 48*5 (next multiplier) gives us 240, thus rechecking gives us that the next value in the traditional progression confirms the 384 is the next. However, simplifying here 8 * 2 * 3 and 48 * 4 forming common factors. Using all, the correct interpretation rechecks back leading into growth via multiplication stabilization showcasing some normal factors reaching into the sustained series of both functional rounds. So 192 fits better initially aside but rewriting 384 does fit creatively multiplying along the approaches.	0
+51	48	48	The pattern in the given sequence is that each number is derived from the previous one by multiplying it by an increasing integer. Starting with the first number, 2: 2 * 1 = 2 (the second number), 2 * 2 = 4 (the third number), and 4 * 3 = 12 (the fourth number). Following this pattern, the next number will be 12 * 4 = 48.	0
+52	1	1	The sequence appears to follow a pattern where '1's and '0's alternate in a specific fashion. Analyzing the positions, we can see that '1's occur at positions 1, 2, 5, 7, while the '0's are present at positions 3, 4, 6, 8, 9. The pattern suggests that after a series of '0's, a '1' is introduced, and based on the last '0' (at position 9), we can predict a '1' will follow, making the next number '1'.	0
